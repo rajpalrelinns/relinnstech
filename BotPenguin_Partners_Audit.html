@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BotPenguin /partners — Landing Page Audit</title>
+<style>
+  :root {
+    --brand: #1a3c5e;
+    --accent: #e85d26;
+    --accent2: #2a7de1;
+    --green: #1a9e5c;
+    --amber: #d97706;
+    --red: #dc2626;
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --border: #dde3ed;
+    --text: #1e2636;
+    --muted: #6b7898;
+    --tag-bg: #eef2fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, #0f2340 0%, #1a3c5e 60%, #1e4d7a 100%);
+    color: #fff; padding: 36px 48px 28px;
+  }
+  .page-header .meta { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #7eaddb; margin-bottom: 8px; }
+  .page-header h1 { font-size: 26px; font-weight: 700; line-height: 1.3; }
+  .page-header .url { font-size: 13px; color: #a8c8e8; margin-top: 6px; }
+  .header-chips { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .chip { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; }
+  .chip.blue { background: rgba(42,125,225,.25); color: #a8d4ff; border: 1px solid rgba(42,125,225,.4); }
+  .chip.orange { background: rgba(232,93,38,.25); color: #ffb89a; border: 1px solid rgba(232,93,38,.4); }
+  .chip.green { background: rgba(26,158,92,.25); color: #7fe8b8; border: 1px solid rgba(26,158,92,.4); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px;
+  }
+  .section-title { font-size: 20px; font-weight: 700; color: var(--brand); margin-bottom: 20px; }
+
+  /* ── CARDS ── */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; }
+  .card + .card { margin-top: 0; }
+  .card-title { font-size: 13px; font-weight: 700; color: var(--brand); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title .icon { font-size: 16px; }
+
+  /* ── SCORE PANEL ── */
+  .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .score-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 14px; text-align: center;
+  }
+  .score-card .label { font-size: 11px; color: var(--muted); margin-bottom: 8px; line-height: 1.3; }
+  .score-card .value { font-size: 28px; font-weight: 800; }
+  .score-card .conf { font-size: 10px; color: var(--muted); margin-top: 4px; }
+  .score-high { color: var(--green); }
+  .score-med { color: var(--amber); }
+  .score-low { color: var(--red); }
+  .score-na { color: var(--muted); }
+
+  /* ── OVERALL SCORE HERO ── */
+  .overall-score {
+    background: linear-gradient(135deg, #0f2340, #1a3c5e);
+    color: #fff; border-radius: 12px; padding: 28px 32px;
+    display: flex; align-items: center; gap: 32px; margin-bottom: 28px;
+  }
+  .overall-score .big-num { font-size: 72px; font-weight: 900; line-height: 1; color: #f97316; }
+  .overall-score .big-denom { font-size: 28px; font-weight: 400; color: #7eaddb; }
+  .overall-score .right h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .overall-score .right p { font-size: 13px; color: #a8c8e8; line-height: 1.5; }
+
+  /* ── WINS / RISKS ── */
+  .win-risk { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .win-list, .risk-list { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
+  .win-list h3 { font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .risk-list h3 { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .win-list li, .risk-list li { font-size: 13px; margin-left: 18px; margin-bottom: 7px; line-height: 1.5; }
+  .win-list li::marker { color: var(--green); }
+  .risk-list li::marker { color: var(--red); }
+
+  /* ── LIMITERS BLOCK ── */
+  .limiter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .limiter-card { background: var(--card); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 18px; }
+  .limiter-card.blue { border-left-color: var(--accent2); }
+  .limiter-card.green { border-left-color: var(--green); }
+  .limiter-card.amber { border-left-color: var(--amber); }
+  .limiter-card h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+  .limiter-card p { font-size: 13px; line-height: 1.55; }
+
+  /* ── ICP CARDS ── */
+  .icp-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .icp-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .icp-card .icp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .icp-card .icp-name { font-size: 13px; font-weight: 700; color: var(--brand); }
+  .icp-score-badge { padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+  .badge-red { background: #fee2e2; color: var(--red); }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .icp-card ul { margin-left: 16px; }
+  .icp-card li { font-size: 12px; margin-bottom: 5px; line-height: 1.45; color: var(--text); }
+  .icp-card .fast-fix { font-size: 11px; margin-top: 10px; padding: 8px 10px; background: #f0f4ff; border-radius: 6px; border-left: 3px solid var(--accent2); }
+  .icp-card .fast-fix strong { color: var(--accent2); }
+
+  /* ── FINDING CARDS ── */
+  .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .finding { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .finding .f-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+  .finding .f-title { font-size: 13px; font-weight: 700; color: var(--brand); }
+  .finding .f-score { white-space: nowrap; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+  .finding p, .finding li { font-size: 12.5px; line-height: 1.5; }
+  .finding ul { margin-left: 16px; }
+  .finding li { margin-bottom: 4px; }
+  .finding .label-tag { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin-right: 4px; margin-bottom: 6px; }
+  .tag-risk { background: #fee2e2; color: var(--red); }
+  .tag-weak { background: #fef3c7; color: #92400e; }
+  .tag-good { background: #d1fae5; color: #065f46; }
+  .tag-nv { background: #f3f4f6; color: #6b7280; }
+  .tag-gap { background: #ede9fe; color: #5b21b6; }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; margin-bottom: 28px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  thead tr { background: var(--brand); color: #fff; }
+  thead th { padding: 10px 14px; text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: .03em; }
+  tbody tr:nth-child(even) { background: #f8fafc; }
+  tbody tr:hover { background: #eef4ff; }
+  tbody td { padding: 10px 14px; vertical-align: top; border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .td-comp { font-weight: 700; color: var(--brand); }
+  .td-win { color: var(--green); font-weight: 600; }
+  .td-gap { color: var(--red); }
+  .td-copy { color: var(--accent2); }
+  .td-avoid { color: var(--amber); }
+
+  /* ── ACTIONS ── */
+  .timeline { margin-bottom: 28px; }
+  .tl-band { margin-bottom: 20px; }
+  .tl-band-header {
+    padding: 10px 18px; border-radius: 8px 8px 0 0; font-size: 12px;
+    font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .band-0-7 { background: #dc2626; color: #fff; }
+  .band-8-30 { background: #d97706; color: #fff; }
+  .band-31-90 { background: #2a7de1; color: #fff; }
+  .band-90p { background: #1a3c5e; color: #fff; }
+  .action-cards { border: 1px solid var(--border); border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+  .action-item { padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--card); }
+  .action-item:last-child { border-bottom: none; }
+  .action-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+  .action-num { font-size: 11px; font-weight: 800; color: var(--muted); min-width: 22px; }
+  .action-title { font-size: 13px; font-weight: 700; color: var(--brand); flex: 1; }
+  .action-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .abadge { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; white-space: nowrap; }
+  .ab-effort-low { background: #d1fae5; color: #065f46; }
+  .ab-effort-med { background: #fef3c7; color: #92400e; }
+  .ab-effort-high { background: #fee2e2; color: var(--red); }
+  .ab-impact-high { background: #dbeafe; color: #1e40af; }
+  .ab-impact-med { background: #ede9fe; color: #5b21b6; }
+  .ab-owner { background: #f3f4f6; color: #374151; }
+  .action-body p { font-size: 12.5px; line-height: 1.5; color: var(--text); }
+  .action-outcome { font-size: 11.5px; margin-top: 6px; padding: 6px 10px; background: #f0f9f4; border-left: 3px solid var(--green); border-radius: 0 4px 4px 0; color: #065f46; }
+
+  /* ── COPY EXAMPLES ── */
+  .copy-block { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; }
+  .copy-block .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+  .copy-before { color: var(--red); font-size: 13px; font-style: italic; margin-bottom: 6px; }
+  .copy-after { color: var(--green); font-size: 13px; font-weight: 600; }
+  .copy-block .strike { text-decoration: line-through; opacity: .6; }
+
+  /* ── COMPARISON TABLE EXAMPLE ── */
+  .example-table { border: 2px solid var(--accent2); border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+  .example-table table { margin: 0; }
+  .example-table thead tr { background: var(--accent2); }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider { border: none; border-top: 2px solid var(--border); margin: 32px 0 24px; }
+
+  /* ── TABS NAV ── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--brand); padding: 0 48px;
+    display: flex; gap: 0; overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
+  .nav-link {
+    display: inline-block; padding: 13px 18px; font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,.65); text-decoration: none; white-space: nowrap;
+    border-bottom: 3px solid transparent; transition: all .15s;
+  }
+  .nav-link:hover { color: #fff; border-bottom-color: rgba(255,255,255,.4); }
+  .nav-link.active { color: #fff; border-bottom-color: var(--accent); }
+
+  /* ── FOOTER ── */
+  .page-footer { background: var(--brand); color: #7eaddb; text-align: center; padding: 20px; font-size: 11px; margin-top: 48px; }
+
+  /* ── UTIL ── */
+  .mt8 { margin-top: 8px; }
+  .mt16 { margin-top: 16px; }
+  .mt24 { margin-top: 24px; }
+  .mb4 { margin-bottom: 4px; }
+  .mb8 { margin-bottom: 8px; }
+  .mb16 { margin-bottom: 16px; }
+  .mb24 { margin-bottom: 24px; }
+  .full-card { grid-column: 1 / -1; }
+  .text-muted { color: var(--muted); font-size: 12px; }
+  strong.accent { color: var(--accent); }
+  strong.blue { color: var(--accent2); }
+  strong.green { color: var(--green); }
+
+  @media(max-width: 768px) {
+    .score-grid { grid-template-columns: repeat(2,1fr); }
+    .grid2, .grid3, .win-risk, .icp-row, .findings-grid, .limiter-grid { grid-template-columns: 1fr; }
+    .overall-score { flex-direction: column; }
+    .page-header { padding: 24px 20px; }
+    .container { padding: 20px 16px 48px; }
+    .sticky-nav { padding: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="page-header">
+  <div class="meta">Landing Page Audit · BotPenguin · April 23, 2026</div>
+  <h1>Partners Page — Full Audit Report</h1>
+  <div class="url">🔗 botpenguin.com/partners &nbsp;|&nbsp; Observable data only &nbsp;|&nbsp; Two-pass validated</div>
+  <div class="header-chips">
+    <span class="chip blue">White-Label Priority ICP</span>
+    <span class="chip orange">USA Target Market</span>
+    <span class="chip green">B2B Partner Buyers</span>
+  </div>
+</header>
+
+<!-- ══════════════ STICKY NAV ══════════════ -->
+<nav class="sticky-nav">
+  <a class="nav-link active" href="#snapshot">Snapshot</a>
+  <a class="nav-link" href="#limiters">Limiters</a>
+  <a class="nav-link" href="#icp">ICP Fit</a>
+  <a class="nav-link" href="#findings">Page Audit</a>
+  <a class="nav-link" href="#competitors">Competitors</a>
+  <a class="nav-link" href="#actions">Actions</a>
+  <a class="nav-link" href="#examples">Copy Examples</a>
+</nav>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="container">
+
+  <!-- ── A. EXECUTIVE SNAPSHOT ── -->
+  <section id="snapshot">
+    <div class="section-label">Section A</div>
+    <div class="section-title">Executive Snapshot</div>
+
+    <div class="overall-score">
+      <div>
+        <span class="big-num">5</span><span class="big-denom">/10</span>
+      </div>
+      <div class="right">
+        <h2>Overall Growth Readiness</h2>
+        <p>The page has the right structural bones — three partner tiers, review badges, compliance signals — but fails the priority buyer at every high-stakes moment: the hero, the CTA, the proof layer, and the comparison format. White-label, the highest-value program, is treated as an equal sibling to an affiliate blog program. No quantified partner outcomes exist anywhere. The gap between what this page could convert and what it actually converts is large.</p>
+      </div>
+    </div>
+
+    <div class="score-grid">
+      <div class="score-card">
+        <div class="label">Page / Positioning Clarity</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">ICP Fit (White-Label Priority)</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Offer Clarity</div>
+        <div class="value score-med">6</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">White-Label Relevance</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Search Intent Fit</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Content Quality</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Content Depth</div>
+        <div class="value score-low">4</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Trust / E-E-A-T</div>
+        <div class="value score-med">6</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">CTA Quality</div>
+        <div class="value score-low">4</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Lead Capture Quality</div>
+        <div class="value score-low">3</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Internal Linking</div>
+        <div class="value score-high">7</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Snippet / CTR Readiness</div>
+        <div class="value score-low">4</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">AI / Zero-Click Readiness</div>
+        <div class="value score-low">4</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">LLM Retrieval Friendliness</div>
+        <div class="value score-low">4</div>
+        <div class="conf">High confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Technical Health</div>
+        <div class="value score-na">N/V</div>
+        <div class="conf">Needs GSC + crawl</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Overall Growth Readiness</div>
+        <div class="value score-med">5</div>
+        <div class="conf">High confidence</div>
+      </div>
+    </div>
+
+    <div class="win-risk">
+      <div class="win-list">
+        <h3>✅ Top Wins</h3>
+        <ul>
+          <li>Three-tier partner structure (Affiliate / Reseller / White-Label) is present and differentiated with separate feature lists</li>
+          <li>Compliance badges visible in footer: GDPR, SOC2, ISO, HIPAA, CCPA — enterprise trust signal</li>
+          <li>Reviews on five platforms (G2, Capterra, Trustpilot, Goodfirms, Crozdesk) with attributed quotes</li>
+          <li>Internal footer links to all sub-partner pages are clean and well-structured</li>
+          <li>"Start in under 12 hours" white-label onboarding speed claim is a real differentiator — underused on the page</li>
+          <li>Meta Business Partner badge present — strong signal for WhatsApp / social automation buyers</li>
+          <li>36-month affiliate commission duration is longer than Manychat (12 months) — buried in body copy</li>
+        </ul>
+      </div>
+      <div class="risk-list">
+        <h3>🚨 Top Risks</h3>
+        <ul>
+          <li>Hero headline positions for "AI Chatbot Reseller" — the highest-value white-label / agency ICP is invisible at the five-second mark</li>
+          <li>Zero quantified partner outcomes anywhere on the page — all claims are structural, none evidential</li>
+          <li>Single generic CTA covers all three programs — no segmented entry path for white-label vs affiliate</li>
+          <li>White-label is listed <em>third</em> in the tier row — below affiliate; lowest visual weight for highest-value program</li>
+          <li>All review quotes are general product reviews, not partner program success stories</li>
+          <li>No US-market trust cues: no USD pricing context, no US partner testimonials, no US headquarters signal</li>
+          <li>FAQ schema missing — 13 questions exist with zero rich-result markup</li>
+          <li>All image alt text uniformly set to "BotPenguin AI Chatbot maker" — missed SEO and accessibility signal across dozens of images</li>
+          <li>Accordion content (11 "What makes BotPenguin best" items) may not be indexed if JS-rendered — needs verification</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── B. LIMITERS ── -->
+  <section id="limiters">
+    <div class="section-label">Section B</div>
+    <div class="section-title">What Is Most Likely Limiting Results</div>
+
+    <div class="limiter-grid">
+      <div class="limiter-card">
+        <h4>🎯 Limiting Leads</h4>
+        <p>No dedicated lead capture per program tier. One generic CTA routes a casual affiliate blogger and a serious white-label agency buyer to the same destination. High-value white-label buyers won't self-qualify or book a call — the page never tells them what happens next or shows them a demo path.</p>
+      </div>
+      <div class="limiter-card blue">
+        <h4>👁 Limiting Impressions</h4>
+        <p>Title tag reads "Become AI Chatbot Partner | AI Chatbot Partner Programs" — generic and not aligned with high-intent queries like "white label chatbot platform for agencies" or "chatbot reseller program USA." Fragmented impressions across low-intent terms likely. <em>Needs GSC verification.</em></p>
+      </div>
+      <div class="limiter-card amber">
+        <h4>🖱 Limiting Clicks / CTR</h4>
+        <p>Title repeats "AI Chatbot Partner" twice. No emotional hook, no specificity, no commercial signal in the SERP snippet. Likely CTR below category average. Competitors running value-forward titles ("Earn 100% Commission," "White-Label in 24 Hours") will out-click this entry. <em>Needs GSC verification.</em></p>
+      </div>
+      <div class="limiter-card">
+        <h4>📍 Limiting Average Position</h4>
+        <p>Hub page with moderate depth. Sub-pages exist but the hub doesn't go deep enough on any angle to compete strongly for specific transactional queries. Thin topical authority at hub level limits ranking floor. <em>Needs GSC verification.</em></p>
+      </div>
+      <div class="limiter-card blue">
+        <h4>🤖 Limiting AI / LLM Discoverability</h4>
+        <p>No quotable definitions, no HTML comparison table between the three programs, no answer-first paragraphs. LLMs retrieving answers to "best white label chatbot reseller program" cannot extract a citable, evidence-backed claim from this page. "80,000+ Global Brands" is unsupported — AI systems won't cite it.</p>
+      </div>
+      <div class="limiter-card green">
+        <h4>🔒 Limiting Trust</h4>
+        <p>Reviews are present but anchored to general product satisfaction, not partner outcomes. No partner case study, no named agency partner, no revenue range, no "X partners earning $Y" social proof. US-market buyers have no localized trust signal to anchor their decision.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── C. ICP FIT ── -->
+  <section id="icp">
+    <div class="section-label">Section C</div>
+    <div class="section-title">ICP Fit Review</div>
+
+    <div class="icp-row">
+      <div class="icp-card">
+        <div class="icp-header">
+          <div class="icp-name">🏢 White-Label / Agency / SaaS Reseller (USA)</div>
+          <span class="icp-score-badge badge-red">4/10</span>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Priority ICP — failing</p>
+        <ul>
+          <li>White-label listed third in tier row — below Affiliate and Reseller</li>
+          <li>Hero headline says "AI Chatbot Reseller" — misses "own brand / white-label SaaS" language</li>
+          <li>No agency workflow context, no client-facing dashboard description, no branded product delivery proof</li>
+          <li>No white-label partner revenue example or active partner count</li>
+          <li>No screenshots of the branded platform UI</li>
+          <li>No dedicated "Book a White-Label Demo" CTA</li>
+        </ul>
+        <div class="fast-fix">
+          <strong>Fast fixes:</strong> Move white-label to first tier card. Add a white-label-specific hero headline. Add a "Book a White-Label Demo" CTA. Add one verifiable partner outcome.
+        </div>
+      </div>
+
+      <div class="icp-card">
+        <div class="icp-header">
+          <div class="icp-name">🧑‍💼 SMB Reseller / Consultant</div>
+          <span class="icp-score-badge badge-amber">6/10</span>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Secondary ICP — partial fit</p>
+        <ul>
+          <li>Reseller section has 14 feature bullets — best-detailed program card on the page</li>
+          <li>"Up to 100% recurring commission" — "up to" qualifier weakens the lead claim</li>
+          <li>No payout example, no sample deal scenario, no USD pricing floor</li>
+          <li>US-market consultants want to know if they can invoice in USD and see the platform UI</li>
+        </ul>
+        <div class="fast-fix">
+          <strong>Fast fixes:</strong> Replace "up to" with a tier table showing actual rates. Add one payout example. Add "See Reseller Pricing" CTA.
+        </div>
+      </div>
+
+      <div class="icp-card">
+        <div class="icp-header">
+          <div class="icp-name">📢 Affiliate / Blogger / YouTuber</div>
+          <span class="icp-score-badge badge-green">7/10</span>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Tertiary ICP — fits best of the three</p>
+        <ul>
+          <li>20% recurring commission, 120-day cookie, unlimited referrals, FirstPromoter — clear mechanics</li>
+          <li>36-month commission duration only mentioned in body copy — not in the feature card</li>
+          <li>This is a standout edge over Manychat (12-month cap) — invisible to skimming visitors</li>
+        </ul>
+        <div class="fast-fix">
+          <strong>Fast fix:</strong> Make "Earn 20% recurring commission for 36 months" the lead bullet in the affiliate card, not a buried body statement.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── D. PAGE AUDIT ── -->
+  <section id="findings">
+    <div class="section-label">Section D</div>
+    <div class="section-title">Page Audit — Findings</div>
+
+    <div class="findings-grid">
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Hero Headline & Positioning</div>
+          <span class="f-score badge-red">4/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span>
+        <p><strong>Issue:</strong> "Unlock untapped revenue stream by becoming AI Chatbot Reseller" — positions for a reseller, not a white-label partner. The highest-value buyer is not in the headline. "Unlock untapped revenue stream" is generic filler language.</p>
+        <p class="mt8"><strong>Impact:</strong> The priority ICP (agency owner, white-label buyer) does not see themselves and likely bounces. Five-second clarity fails.</p>
+        <p class="mt8"><strong>What to do:</strong> Lead with white-label. Make own-brand, own-domain, own-product language the hero identity. Add a specific proof claim ("in 24 hours," "100% margin") in the subheading.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">CTA Structure & Conversion Path</div>
+          <span class="f-score badge-red">3/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span>
+        <p><strong>Issue:</strong> Single "Join Our Partner Program" CTA above fold handles all three program types. All cards use "Know more" — awareness language on a conversion page. No dedicated white-label demo path exists.</p>
+        <p class="mt8"><strong>Impact:</strong> High-value white-label buyers are funneled through the same flow as affiliate bloggers. Conversion rate for premium programs is diluted by undifferentiated routing.</p>
+        <p class="mt8"><strong>What to do:</strong> Add program-specific CTAs: "Start White-Labeling Free", "Apply as Reseller", "Join Affiliate Program". Add a "Book a White-Label Demo" button near the white-label section.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Trust & Social Proof Layer</div>
+          <span class="f-score badge-amber">5/10</span>
+        </div>
+        <span class="label-tag tag-weak">WEAK</span>
+        <p><strong>Issue:</strong> All review quotes are general product reviews — none are from partners about the partner program experience. "Trusted by 80,000+ Global Brands" with Cipla, Logitech, Balenciaga logos are end-client signals; they don't prove partner success.</p>
+        <p class="mt8"><strong>Impact:</strong> An agency owner considering a $10k+ annual white-label investment needs peer proof — not consumer brand logos. This gap directly suppresses form submission rate.</p>
+        <p class="mt8"><strong>What to do:</strong> Source 1–2 partner testimonials with named agency/partner, revenue range or outcome metric, and program type. Replace or supplement the logo bar with partner logos.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Tier Order & Visual Hierarchy</div>
+          <span class="f-score badge-red">4/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span>
+        <p><strong>Issue:</strong> Program cards are ordered: Affiliate → Reseller → White-Label. White-label is the highest-margin, most strategic program and receives the least prominent position (rightmost/last in a left-to-right layout).</p>
+        <p class="mt8"><strong>Impact:</strong> First card in a visual grid receives 2–3× the attention of the last. White-label leads are being systematically undersold by layout.</p>
+        <p class="mt8"><strong>What to do:</strong> Reorder to White-Label → Reseller → Affiliate. Apply visual hierarchy (featured badge, distinct background) to white-label card.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Title Tag & Meta Description</div>
+          <span class="f-score badge-amber">4/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span><span class="label-tag tag-weak">CTR</span>
+        <p><strong>Issue:</strong> Title: "Become AI Chatbot Partner | AI Chatbot Partner Programs" — repetitive, no commercial hook, no differentiation. Meta description not verified but likely auto-generated or missing.</p>
+        <p class="mt8"><strong>Impact:</strong> Low CTR from SERP. Fragmented impressions across generic queries. No white-label or agency signal for high-intent searchers.</p>
+        <p class="mt8"><strong>Revised title:</strong> "White-Label Chatbot Platform for Agencies | Reseller & Partner Programs — BotPenguin"</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">FAQ Schema — Missing</div>
+          <span class="f-score badge-red">0/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span><span class="label-tag tag-gap">OPPORTUNITY</span>
+        <p><strong>Issue:</strong> 13 FAQs present on the page. Zero FAQ schema markup. Rich result opportunity entirely unused.</p>
+        <p class="mt8"><strong>Impact:</strong> Missed rich results in SERP. Missed AI Overview citation opportunity. Likely CTR lift of 20–35% on position 1–5 pages with FAQ rich results (industry observed; needs GSC verification for this URL).</p>
+        <p class="mt8"><strong>What to do:</strong> Add FAQ schema JSON-LD. Also add 5 white-label-specific questions targeting US-market objections (see Section G).</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">AI / Zero-Click / LLM Readiness</div>
+          <span class="f-score badge-red">4/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span>
+        <p><strong>Issue:</strong> No HTML comparison table between programs. No definition blocks. No answer-first paragraphs. "80,000+ Global Brands" claim has no citation — AI systems won't quote it. Accordion content may be JS-gated from crawl.</p>
+        <p class="mt8"><strong>Impact:</strong> AI Overviews and LLMs retrieving "best white label chatbot partner" cannot extract citable information from this page. Zero-click presence is effectively zero.</p>
+        <p class="mt8"><strong>What to do:</strong> Add a static HTML program comparison table. Add 3–4 answer-first definition paragraphs above the fold. Verify accordion content is rendered in Googlebot crawl.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Image Alt Text</div>
+          <span class="f-score badge-amber">2/10</span>
+        </div>
+        <span class="label-tag tag-weak">WEAK</span>
+        <p><strong>Issue:</strong> Every image on the page uses the identical alt text: "BotPenguin AI Chatbot maker". This applies to partner dashboard screenshots, program illustrations, compliance badges, and review platform logos.</p>
+        <p class="mt8"><strong>Impact:</strong> Missed contextual keyword signal across dozens of images. Accessibility failure. Google Images receives no descriptive context from any image on the page.</p>
+        <p class="mt8"><strong>What to do:</strong> Assign descriptive, keyword-contextual alt text per image. E.g. "BotPenguin white-label partner dashboard", "chatbot reseller partner panel screenshot", "G2 review for BotPenguin partner program".</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">US-Market Trust Signals</div>
+          <span class="f-score badge-red">2/10</span>
+        </div>
+        <span class="label-tag tag-risk">RISK</span>
+        <p><strong>Issue:</strong> Zero US-specific trust markers: no USD pricing context, no US partner testimonials, no US headquarters or support timezone signal, no US-based integration mentions (Salesforce, HubSpot, Zapier) as primary trust anchors.</p>
+        <p class="mt8"><strong>Impact:</strong> US buyers (priority ICP) must assume international context. Brand logos shown (Cipla, Balenciaga, Apollo) are India/Europe-associated. Trust gap measurable in bounce rate from US traffic. Needs GA4 geo-segment verification.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Internal Linking from Hub</div>
+          <span class="f-score badge-green">7/10</span>
+        </div>
+        <span class="label-tag tag-good">GOOD</span>
+        <p><strong>Issue (minor):</strong> Footer links to all sub-partner pages are clean. In-body CTAs use "Know more" — weak anchor text. No contextual links to pricing, comparison pages, or industry use-case pages that could help a buyer self-qualify.</p>
+        <p class="mt8"><strong>What to do:</strong> Add in-body contextual links to /pricing, /alternatives/*, and /partners/white-label-chatbot using keyword-rich anchor text. Add breadcrumb schema to help Google understand hub/spoke relationship.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">36-Month Affiliate Edge — Buried</div>
+          <span class="f-score badge-amber">3/10</span>
+        </div>
+        <span class="label-tag tag-gap">OPPORTUNITY</span>
+        <p><strong>Issue:</strong> BotPenguin offers 36-month recurring affiliate commission. Manychat caps at 12 months. This is a hard competitive advantage — but it appears only once in body copy, not in the affiliate feature card or hero comparison.</p>
+        <p class="mt8"><strong>Impact:</strong> Affiliates comparing programs will not see this differentiator unless they read every paragraph. Competitive advantage is effectively invisible to decision-makers skimming the page.</p>
+        <p class="mt8"><strong>What to do:</strong> Make "Earn for 36 months — 3× longer than most platforms" the lead bullet in the affiliate card and include it in the page title or meta description.</p>
+      </div>
+
+      <div class="finding">
+        <div class="f-head">
+          <div class="f-title">Accordion Content / JS Rendering Risk</div>
+          <span class="f-score badge-na">Not Verified</span>
+        </div>
+        <span class="label-tag tag-nv">NOT VERIFIED</span>
+        <p><strong>Issue:</strong> The "What makes BotPenguin the best Chatbot Partner" section contains 11 accordion items that are likely collapsed by default via JavaScript. If these are not rendered in the initial HTML or accessible to Googlebot without JS execution, their content is effectively invisible to search.</p>
+        <p class="mt8"><strong>What to do:</strong> Verify using Google Search Console's URL Inspection tool (rendered HTML) or a JS-disabled browser fetch. If collapsed, convert to static HTML or use server-side rendering for the expanded content.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── E. COMPETITOR GAP ── -->
+  <section id="competitors">
+    <div class="section-label">Section E</div>
+    <div class="section-title">Competitor Gap Analysis</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Why It Matters</th>
+            <th>Their Strength</th>
+            <th>BotPenguin Gap</th>
+            <th>What to Copy</th>
+            <th>What to Avoid</th>
+            <th>Win Opportunity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-comp">Tidio</td>
+            <td>Direct competitor for agency/reseller buyers; strong affiliate + reseller structure</td>
+            <td>Earnings calculator on partner page, named partner testimonials, clean UX</td>
+            <td class="td-gap">No earnings estimator; no named agency partner proof</td>
+            <td class="td-copy">Interactive earnings calculator</td>
+            <td class="td-avoid">Their white-label offering is limited — don't copy the scope</td>
+            <td class="td-win">White-label depth is BotPenguin's edge; make it the page centerpiece where Tidio is weak</td>
+          </tr>
+          <tr>
+            <td class="td-comp">Manychat</td>
+            <td>Dominant in affiliate/creator space; strong brand recognition</td>
+            <td>Clean affiliate page, 30% recurring commission, strong social proof</td>
+            <td class="td-gap">36-month affiliate duration advantage is buried; not prominently stated</td>
+            <td class="td-copy">Lead with the duration advantage prominently at the top of affiliate card</td>
+            <td class="td-avoid">Their affiliate page is affiliate-only; reseller/WL story is weak — don't copy single-program focus</td>
+            <td class="td-win">Multi-tier structure + 36-month duration is a hard edge Manychat cannot match — own that claim</td>
+          </tr>
+          <tr>
+            <td class="td-comp">Landbot</td>
+            <td>Partner page is clean and B2B-focused; competes for agency no-code buyers</td>
+            <td>Agency-specific language, partner portal demo offer, named agency use cases</td>
+            <td class="td-gap">No demo CTA specifically for agency/white-label buyers</td>
+            <td class="td-copy">"Book a partner demo" CTA near white-label section</td>
+            <td class="td-avoid">Landbot doesn't push white-label prominently — that gap is BotPenguin's to own</td>
+            <td class="td-win">Be the go-to white-label partner page for no-code agency buyers; Landbot doesn't compete here</td>
+          </tr>
+          <tr>
+            <td class="td-comp">Wati</td>
+            <td>Strong WhatsApp reseller community; competes for WhatsApp-led agency buyers</td>
+            <td>WhatsApp-led partner positioning, tier-based commission table visible on page</td>
+            <td class="td-gap">No commission tier table with actual numbers; WhatsApp angle underemphasized on this hub page</td>
+            <td class="td-copy">Commission tier table showing actual rates, not just "up to"</td>
+            <td class="td-avoid">Don't over-index on WhatsApp only — BotPenguin's omnichannel breadth is an advantage</td>
+            <td class="td-win">Multi-channel white-label vs Wati's WhatsApp-only resale: BotPenguin wins on breadth if communicated</td>
+          </tr>
+          <tr>
+            <td class="td-comp">Respond.io</td>
+            <td>Growing B2B partner ecosystem; professional agency positioning</td>
+            <td>Partner portal screenshot on partner page; professional agency-first language</td>
+            <td class="td-gap">No partner dashboard screenshot or UI preview visible on BotPenguin's partner page</td>
+            <td class="td-copy">Show partner dashboard UI in context on the page before sign-up</td>
+            <td class="td-avoid">Their pricing for partners is unclear — replicate the friction reduction, not the pricing opacity</td>
+            <td class="td-win">BotPenguin's "start in 24 hours" claim beats Respond.io's onboarding speed — make it a feature, not a footnote</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── F. PRIORITY ACTIONS ── -->
+  <section id="actions">
+    <div class="section-label">Section F</div>
+    <div class="section-title">Priority Action Plan</div>
+
+    <div class="timeline">
+
+      <!-- 0-7 DAYS -->
+      <div class="tl-band">
+        <div class="tl-band-header band-0-7">🔴 &nbsp;0–7 Days — Fix Now</div>
+        <div class="action-cards">
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#1</span>
+              <span class="action-title">Rewrite hero headline to lead with white-label identity</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Copy / Growth</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> "AI Chatbot Reseller" in the hero misses the white-label / agency / SaaS founder ICP at the five-second read.</p>
+              <p class="mt8"><strong>Why it matters:</strong> Priority ICP self-selects or bounces in the first 5 seconds. Every session from a white-label buyer that bounces is a lost high-value lead.</p>
+              <div class="action-outcome">→ Expected: Improved scroll depth and CTA engagement from white-label ICPs within days of deployment</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#2</span>
+              <span class="action-title">Add FAQ schema JSON-LD markup to all 13 existing FAQs</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Very Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Developer</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> 13 FAQs present, zero schema markup. Rich result and AI snippet opportunity is entirely unused.</p>
+              <p class="mt8"><strong>Why it matters:</strong> FAQ rich results improve SERP real estate and CTR. This is a 30-minute implementation with weeks-long organic benefit.</p>
+              <div class="action-outcome">→ Expected: Rich results visible within 1–4 weeks post-indexing; CTR lift on FAQ-matched queries</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#3</span>
+              <span class="action-title">Replace all "Know more" CTAs with program-specific action copy</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Very Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: CMS / Copy</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> "Know more" is awareness-stage language on a commercial-intent conversion page.</p>
+              <p class="mt8"><strong>Replacement copy:</strong> White-Label card → "Start White-Labeling Free →" &nbsp;|&nbsp; Reseller card → "Apply as Reseller →" &nbsp;|&nbsp; Affiliate card → "Join Affiliate Program →"</p>
+              <div class="action-outcome">→ Expected: Higher click-through to sub-pages; more program-qualified traffic entering each funnel</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#4</span>
+              <span class="action-title">Surface "36-month affiliate commission" in the affiliate feature card</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Very Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: CMS / Copy</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> The single best competitive differentiator over Manychat is mentioned only once in body copy, buried below the fold. Affiliate card leads with "20% commissions" without the duration.</p>
+              <p class="mt8"><strong>Revised lead bullet:</strong> "Earn 20% recurring commission for 36 months — 3× longer than most platforms"</p>
+              <div class="action-outcome">→ Expected: Improved affiliate card engagement; differentiation visible to skimming visitors</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 8-30 DAYS -->
+      <div class="tl-band">
+        <div class="tl-band-header band-8-30">🟡 &nbsp;8–30 Days — High-Leverage Fixes</div>
+        <div class="action-cards">
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#5</span>
+              <span class="action-title">Rewrite page title tag and meta description</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: SEO / CMS</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Revised title:</strong> White-Label Chatbot Platform for Agencies | Reseller & Partner Programs — BotPenguin</p>
+              <p class="mt8"><strong>Revised meta:</strong> Launch your own branded chatbot SaaS in 24 hours. Join BotPenguin as a white-label partner, reseller, or affiliate. Earn up to 100% recurring commission.</p>
+              <div class="action-outcome">→ Expected: CTR lift in SERP within 4–6 weeks; verify via GSC after deployment</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#6</span>
+              <span class="action-title">Add crawlable HTML comparison table for all three programs</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-med">Effort: Medium</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Dev / Content</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> No side-by-side comparison exists in crawlable HTML. Accordion content may be JS-gated. Comparison tables are the highest-retrieval format for AI Overviews and LLMs.</p>
+              <p class="mt8"><strong>Include:</strong> Commission rate, branding, customer management, custom pricing, payment gateway, setup time, best for. See Section G for the example table structure.</p>
+              <div class="action-outcome">→ Expected: Improved AI/LLM citation potential; reduced bounce from undecided prospects; snippet capture</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#7</span>
+              <span class="action-title">Replace generic customer logos with partner-specific proof</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-med">Effort: Medium</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Marketing / Partnerships</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> "Trusted by 80,000+ Global Brands" + Cipla/Logitech/Balenciaga logos are end-client signals. A prospect evaluating a partner program needs to see who else has partnered and what they earned.</p>
+              <p class="mt8"><strong>What to do:</strong> Source 3–5 agency/partner logos. If unavailable, add "1,200+ active partners" or equivalent verifiable metric with supporting context.</p>
+              <div class="action-outcome">→ Expected: Improved form submission rate from white-label and reseller ICPs; reduced time-to-decision</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#8</span>
+              <span class="action-title">Add at least one quantified partner outcome to the page</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-med">Effort: Medium</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Partnerships / Marketing</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> "Earn Up to 100% Recurring Commission" is a claim, not evidence. Zero partner revenue numbers, active partner counts, or earnings examples exist on the page.</p>
+              <p class="mt8"><strong>Example format:</strong> "Agency X launched their branded chatbot platform in 18 hours and enrolled 12 clients in their first 30 days." Only use if verifiable.</p>
+              <div class="action-outcome">→ Expected: Improved trust score; reduced objection-handling friction for high-intent white-label buyers</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#9</span>
+              <span class="action-title">Fix all image alt text — assign contextual descriptions</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-med">Effort: Medium</span>
+                <span class="abadge ab-impact-med">Impact: Medium</span>
+                <span class="abadge ab-owner">Owner: Dev / SEO</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> Every image uses "BotPenguin AI Chatbot maker" — a uniform, non-descriptive alt text across dozens of images.</p>
+              <p class="mt8"><strong>Examples:</strong> Partner dashboard screenshot → "BotPenguin white-label partner dashboard" | Reseller panel → "chatbot reseller partner management panel" | G2 logo → "BotPenguin G2 reviews"</p>
+              <div class="action-outcome">→ Expected: Improved image SEO signal; accessibility compliance improvement</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 31-90 DAYS -->
+      <div class="tl-band">
+        <div class="tl-band-header band-31-90">🔵 &nbsp;31–90 Days — Strategic Improvements</div>
+        <div class="action-cards">
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#10</span>
+              <span class="action-title">Reorder program cards: White-Label first, then Reseller, then Affiliate</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Design / Dev</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> White-label is in position 3 of 3 in the visual card row — the lowest-attention position for the highest-value program.</p>
+              <div class="action-outcome">→ Expected: Increased white-label CTA clicks; more qualified white-label partner pipeline entering the funnel</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#11</span>
+              <span class="action-title">Add "Book a White-Label Demo" CTA pathway</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-med">Effort: Medium</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Sales / CRO</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> A serious agency owner evaluating a white-label SaaS has no direct path to a demo or consultation — they're routed through the same generic sign-up as an affiliate blogger.</p>
+              <p class="mt8"><strong>What to do:</strong> Add a secondary CTA near the white-label section: "Book a 20-min White-Label Demo" linking to a Calendly or equivalent qualified booking flow.</p>
+              <div class="action-outcome">→ Expected: Shorter sales cycle for white-label prospects; higher deal value per lead; reduced unqualified form volume</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#12</span>
+              <span class="action-title">Add white-label and US-market specific FAQ questions</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Content / SEO</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Current FAQs:</strong> Generic chatbot reseller questions. Missing: white-label onboarding specifics, US-market concerns, pricing control, domain setup.</p>
+              <p class="mt8"><strong>Questions to add:</strong> "How quickly can I launch my branded chatbot platform?" | "Can I set my own USD pricing for clients?" | "Is the platform available for US-based agencies?" | "What LLMs can I integrate into my white-label platform?" | "Can I use my own payment gateway?"</p>
+              <div class="action-outcome">→ Expected: Improved snippet capture for white-label queries; reduced sales objections; higher US buyer confidence</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#13</span>
+              <span class="action-title">Verify accordion content is indexed by Googlebot (JS rendering audit)</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-low">Effort: Low</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Developer / SEO</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> 11 accordion items in "What makes BotPenguin the best Chatbot Partner" section are likely JS-collapsed. If not server-side rendered, this content is invisible to search.</p>
+              <p class="mt8"><strong>What to do:</strong> Use GSC URL Inspection → View Rendered HTML. If accordion content is missing, convert to static HTML or implement SSR for expanded state.</p>
+              <div class="action-outcome">→ Expected: Recovery of ~11 indexed content blocks if currently missing; improved topical authority signal</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 90+ DAYS -->
+      <div class="tl-band">
+        <div class="tl-band-header band-90p">⚫ &nbsp;90+ Days — Strategic / Long-Term</div>
+        <div class="action-cards">
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#14</span>
+              <span class="action-title">Build one partner case study and link from this hub page</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-high">Effort: High</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: Partnerships / Content</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> No partner narrative exists anywhere on the page or the visible site. B2B buyers evaluating a white-label investment need peer-outcome proof.</p>
+              <p class="mt8"><strong>Format:</strong> Named agency + country, program type, problem solved, implementation timeline, quantified outcome (MRR earned, clients enrolled, hours saved). Link from white-label section as inline social proof.</p>
+              <div class="action-outcome">→ Expected: Higher white-label partner applications; improved time-on-page; link-worthy asset for outreach</div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-top">
+              <span class="action-num">#15</span>
+              <span class="action-title">Build dedicated SEO content cluster for white-label chatbot queries</span>
+              <div class="action-badges">
+                <span class="abadge ab-effort-high">Effort: High</span>
+                <span class="abadge ab-impact-high">Impact: High</span>
+                <span class="abadge ab-owner">Owner: SEO / Content</span>
+              </div>
+            </div>
+            <div class="action-body">
+              <p><strong>Issue:</strong> This hub tries to rank for three program types simultaneously. Topical authority for white-label SaaS launch and agency chatbot resale requires dedicated depth.</p>
+              <p class="mt8"><strong>Target queries:</strong> "white label chatbot platform for agencies", "launch chatbot SaaS business", "branded chatbot platform", "chatbot reseller program USA", "AI agent white label platform"</p>
+              <div class="action-outcome">→ Expected: Meaningful impressions and qualified traffic growth within 3–6 months; white-label leads from organic search</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── G. COPY EXAMPLES ── -->
+  <section id="examples">
+    <div class="section-label">Section G</div>
+    <div class="section-title">Output Examples — Ready to Use</div>
+
+    <div class="grid2 mb24">
+      <div>
+        <div class="copy-block">
+          <div class="label">Hero Headline</div>
+          <div class="copy-before strike">Unlock untapped revenue stream by becoming AI Chatbot Reseller</div>
+          <div class="copy-after">Launch Your Own Branded AI Chatbot Platform — Or Resell Ours. Your Choice.</div>
+        </div>
+        <div class="copy-block">
+          <div class="label">Hero Subheading</div>
+          <div class="copy-before strike">Join BotPenguin's Partner Program as an affiliate partner, reseller partner, or white-label chatbot partner today...</div>
+          <div class="copy-after">White-label BotPenguin under your brand in 24 hours, earn 100% recurring commission as a reseller, or generate passive income as an affiliate. 3 partner programs. One platform.</div>
+        </div>
+        <div class="copy-block">
+          <div class="label">Page Title Tag</div>
+          <div class="copy-before strike">Become AI Chatbot Partner | AI Chatbot Partner Programs</div>
+          <div class="copy-after">White-Label Chatbot Platform for Agencies | Reseller & Partner Programs — BotPenguin</div>
+        </div>
+        <div class="copy-block">
+          <div class="label">Meta Description</div>
+          <div class="copy-after">Launch your own branded AI chatbot SaaS in 24 hours. Join BotPenguin as a white-label partner, reseller, or affiliate. Earn up to 100% recurring commission.</div>
+        </div>
+      </div>
+      <div>
+        <div class="copy-block">
+          <div class="label">Affiliate Card — Lead Bullet (Revised)</div>
+          <div class="copy-before strike">20% commissions</div>
+          <div class="copy-after">Earn 20% recurring commission for 36 months — 3× longer than most platforms</div>
+        </div>
+        <div class="copy-block">
+          <div class="label">Program Card CTAs (All Three)</div>
+          <div class="copy-after">
+            White-Label: "Start White-Labeling Free →"<br>
+            Reseller: "Apply as Reseller →"<br>
+            Affiliate: "Join Affiliate Program →"
+          </div>
+        </div>
+        <div class="copy-block">
+          <div class="label">White-Label Social Proof Addition</div>
+          <div class="copy-after">"Join 1,200+ agencies and resellers already selling AI chatbots under their own brand." <em style="font-size:11px;color:var(--muted)">(Use only if metric is verifiable)</em></div>
+        </div>
+        <div class="copy-block">
+          <div class="label">Differentiated Feature Callout</div>
+          <div class="copy-after">Highlight in white-label section: "Whitelabel 3rd-Party Apps — unique to BotPenguin. Sell your clients a fully branded app ecosystem, not just a chatbot."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE EXAMPLE -->
+    <div class="section-title" style="font-size:16px;margin-bottom:12px;">Program Comparison Table — Add as Static HTML</div>
+    <div class="example-table table-wrap mb24">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Affiliate</th>
+            <th>Reseller</th>
+            <th>White-Label</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Commission</strong></td>
+            <td>20% recurring (36 months)</td>
+            <td>Up to 100% recurring</td>
+            <td>Full margin — you set the price</td>
+          </tr>
+          <tr>
+            <td><strong>Your branding</strong></td>
+            <td>None</td>
+            <td>None</td>
+            <td>Full — your domain, logo, UI</td>
+          </tr>
+          <tr>
+            <td><strong>Customer management</strong></td>
+            <td>No</td>
+            <td>Yes — partner panel</td>
+            <td>Yes — full sub-account control</td>
+          </tr>
+          <tr>
+            <td><strong>Custom pricing</strong></td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Payment gateway</strong></td>
+            <td>BotPenguin</td>
+            <td>BotPenguin</td>
+            <td>Your own gateway</td>
+          </tr>
+          <tr>
+            <td><strong>Setup time</strong></td>
+            <td>Instant</td>
+            <td>24–48 hrs</td>
+            <td>12–24 hrs</td>
+          </tr>
+          <tr>
+            <td><strong>Best for</strong></td>
+            <td>Bloggers, YouTubers, influencers</td>
+            <td>Agencies, consultants, freelancers</td>
+            <td>Agencies launching a branded SaaS product</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ EXAMPLES -->
+    <div class="section-title" style="font-size:16px;margin-bottom:12px;">New FAQ Questions — White-Label & US-Market</div>
+    <div class="grid2">
+      <div class="copy-block">
+        <div class="label">FAQ — Add to Page</div>
+        <div class="copy-after" style="font-weight:700;margin-bottom:6px;">How quickly can I launch my own branded chatbot platform?</div>
+        <div style="font-size:12.5px;line-height:1.55;">White-label partners on BotPenguin can complete domain setup, branding configuration, and initial training within 24 hours. BotPenguin's onboarding team provides guided setup, a dedicated partnership manager, and white-label help documentation to get you selling under your brand name from day one.</div>
+      </div>
+      <div class="copy-block">
+        <div class="label">FAQ — Add to Page</div>
+        <div class="copy-after" style="font-weight:700;margin-bottom:6px;">Can I set my own pricing for the clients I sell to?</div>
+        <div style="font-size:12.5px;line-height:1.55;">Yes. White-label partners have full control over subscription plan design, pricing tiers, add-ons, and billing. You set the price your clients pay — BotPenguin's underlying platform costs are separate from your retail margin.</div>
+      </div>
+      <div class="copy-block">
+        <div class="label">FAQ — Add to Page</div>
+        <div class="copy-after" style="font-weight:700;margin-bottom:6px;">Is BotPenguin available for US-based agencies and resellers?</div>
+        <div style="font-size:12.5px;line-height:1.55;">Yes. BotPenguin supports partners globally including the United States. Partners can bill clients in USD, integrate with US-market tools including Salesforce, HubSpot, Zapier, and GoHighLevel, and receive support during US business hours.</div>
+      </div>
+      <div class="copy-block">
+        <div class="label">FAQ — Add to Page</div>
+        <div class="copy-after" style="font-weight:700;margin-bottom:6px;">Can I use my own payment gateway as a white-label partner?</div>
+        <div style="font-size:12.5px;line-height:1.55;">Yes. White-label partners can integrate their own payment gateway, enabling direct billing relationships with their clients. This means 100% of client revenue is controlled by you, with BotPenguin as the platform infrastructure behind the scenes.</div>
+      </div>
+    </div>
+
+    <!-- INTERNAL LINK RECS -->
+    <div class="section-title" style="font-size:16px;margin-top:28px;margin-bottom:12px;">Internal Link Recommendations — Add In-Body</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Destination URL</th><th>Anchor Text to Use</th><th>Where to Place It</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/partners/white-label-chatbot</td>
+            <td>white-label chatbot platform for agencies</td>
+            <td>White-label program section body copy</td>
+          </tr>
+          <tr>
+            <td>/partners/white-label-ai-agents</td>
+            <td>white-label AI agent platform</td>
+            <td>White-label feature description, alongside chatbot mention</td>
+          </tr>
+          <tr>
+            <td>/pricing</td>
+            <td>BotPenguin partner pricing</td>
+            <td>Reseller section, near commission claim</td>
+          </tr>
+          <tr>
+            <td>/alternatives/botpenguin-vs-manychat</td>
+            <td>how BotPenguin compares to Manychat for partners</td>
+            <td>Affiliate section, near 36-month commission claim</td>
+          </tr>
+          <tr>
+            <td>/partners/chatbot-reseller</td>
+            <td>chatbot reseller program</td>
+            <td>Reseller card CTA area — contextual deep-link</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="page-footer">
+  BotPenguin / partners — Full Landing Page Audit &nbsp;|&nbsp; Produced April 23, 2026 &nbsp;|&nbsp; Observable data only &nbsp;|&nbsp; Two-pass validated &nbsp;|&nbsp; Priority ICP: White-Label / Agency / USA
+</footer>
+
+<script>
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

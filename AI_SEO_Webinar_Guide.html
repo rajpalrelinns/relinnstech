@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Driven SEO & Conversational Search — Complete Webinar Guide 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy:#0B1F4B; --blue:#1A3A7A; --cyan:#00C2E0; --mint:#00D68F;
+  --yellow:#F5C518; --orange:#FF6B35; --purple:#7C5CBF; --red:#E84545;
+  --card:#F7F9FF; --dark-card:#0F2557; --light:#C8D8F0; --white:#FFF;
+  --text:#1C2B4A; --muted:#5A6A8A; --border:#DDE6F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF3FF;color:var(--text);line-height:1.7}
+
+/* NAV */
+nav{background:var(--navy);position:sticky;top:0;z-index:200;border-bottom:3px solid var(--cyan);box-shadow:0 2px 24px rgba(0,194,224,.3)}
+.nav-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:52px}
+.nav-brand{color:var(--cyan);font-weight:900;font-size:.95rem;letter-spacing:1px;white-space:nowrap}
+.nav-links{display:flex;gap:.2rem;flex-wrap:wrap}
+.nav-links a{color:var(--light);text-decoration:none;font-size:.72rem;padding:4px 9px;border-radius:16px;transition:all .2s;white-space:nowrap}
+.nav-links a:hover{background:var(--cyan);color:var(--navy);font-weight:700}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#061530 0%,#0B2060 50%,#0E2D8A 100%);padding:5rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(0,194,224,.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(0,214,143,.12) 0%,transparent 50%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,194,224,.15);border:1px solid rgba(0,194,224,.4);color:var(--cyan);padding:6px 18px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1rem}
+.hero h1 em{color:var(--cyan);font-style:normal}
+.hero-sub{color:var(--light);font-size:1.05rem;max-width:700px;margin:0 auto 2.5rem}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.5rem}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;padding:5px 14px;border-radius:20px;font-size:.78rem}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;margin-top:1rem}
+.hstat{background:rgba(255,255,255,.07);border:1px solid rgba(0,194,224,.25);border-radius:14px;padding:1.1rem 1.6rem;min-width:150px}
+.hstat .n{font-size:2rem;font-weight:900;color:var(--mint)}
+.hstat .l{font-size:.72rem;color:var(--light);margin-top:2px;line-height:1.4}
+
+/* SECTION WRAPPER */
+.sec-wrap{max-width:1300px;margin:0 auto;padding:4rem 1.5rem}
+.sec-label{display:inline-block;background:var(--cyan);color:var(--navy);font-size:.68rem;font-weight:800;letter-spacing:2px;padding:3px 12px;border-radius:16px;text-transform:uppercase;margin-bottom:.6rem}
+.sec-label.mint{background:var(--mint)}
+.sec-label.yellow{background:var(--yellow)}
+.sec-label.orange{background:var(--orange);color:#fff}
+.sec-label.purple{background:var(--purple);color:#fff}
+.sec-label.red{background:var(--red);color:#fff}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;color:var(--navy);margin-bottom:.5rem}
+.sec-intro{color:var(--muted);font-size:.97rem;max-width:820px;margin-bottom:2rem}
+
+/* DARK BG SECTION */
+.dark-bg{background:linear-gradient(135deg,var(--navy),var(--blue))}
+.dark-bg h2{color:var(--cyan)}
+.dark-bg .sec-intro{color:var(--light)}
+.dark-bg p{color:var(--light)}
+
+/* GRID CARDS */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.4rem}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+
+/* CARD */
+.card{background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(11,31,75,.07);border-top:4px solid var(--cyan);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(11,31,75,.13)}
+.card.mint-t{border-top-color:var(--mint)}
+.card.yellow-t{border-top-color:var(--yellow)}
+.card.orange-t{border-top-color:var(--orange)}
+.card.purple-t{border-top-color:var(--purple)}
+.card.red-t{border-top-color:var(--red)}
+.card.navy-t{border-top-color:var(--navy)}
+.c-icon{font-size:2rem;margin-bottom:.7rem}
+.card h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.4rem}
+.card p,.card li{font-size:.88rem;color:var(--muted);line-height:1.65}
+.card ul{padding-left:1.1rem;margin-top:.4rem}
+.card ul li{margin-bottom:.25rem}
+
+/* DARK CARD */
+.dcard{background:rgba(255,255,255,.06);border:1px solid rgba(0,194,224,.2);border-radius:14px;padding:1.4rem}
+.dcard h3{color:var(--cyan);font-size:.98rem;margin-bottom:.5rem}
+.dcard p,.dcard li{color:var(--light);font-size:.87rem}
+.dcard ul{padding-left:1.1rem;margin-top:.4rem}
+
+/* STAT STRIP */
+.stat-strip{background:linear-gradient(135deg,var(--navy),#0E2D8A);border-radius:20px;padding:2.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;margin:2rem 0}
+.ss-item{text-align:center}
+.ss-n{font-size:2.3rem;font-weight:900;color:var(--cyan)}
+.ss-d{font-size:.78rem;color:var(--light);margin-top:4px;line-height:1.4}
+.ss-s{font-size:.66rem;color:rgba(255,255,255,.35);margin-top:3px}
+
+/* CHARTS */
+.chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;margin-top:1.8rem}
+.cbox{background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(11,31,75,.07)}
+.cbox h4{font-size:.92rem;font-weight:800;color:var(--navy);margin-bottom:.2rem}
+.cbox .csub{font-size:.75rem;color:var(--muted);margin-bottom:1rem}
+.cbox canvas{max-height:260px}
+
+/* FLOW */
+.flow{display:flex;align-items:flex-start;gap:0;flex-wrap:wrap;margin:1.5rem 0}
+.fstep{flex:1;min-width:140px;background:#fff;border-top:5px solid var(--cyan);border-radius:12px;padding:1.1rem .9rem;text-align:center;margin:4px;box-shadow:0 3px 14px rgba(11,31,75,.07)}
+.fstep .fn{width:30px;height:30px;border-radius:50%;background:var(--cyan);color:var(--navy);font-weight:900;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin:0 auto .6rem}
+.fstep h4{font-size:.82rem;font-weight:800;color:var(--navy);margin-bottom:.25rem}
+.fstep p{font-size:.75rem;color:var(--muted)}
+.farrow{display:flex;align-items:center;color:var(--cyan);font-size:1.4rem;padding:4px;margin-bottom:4px;flex-shrink:0}
+@media(max-width:600px){.farrow{display:none}}
+
+/* ACCORDION */
+.accordion{margin-top:1.5rem}
+.aitem{background:#fff;border-radius:12px;margin-bottom:.8rem;overflow:hidden;box-shadow:0 2px 12px rgba(11,31,75,.06)}
+.aitem.dark-acc{background:rgba(255,255,255,.05);border:1px solid rgba(0,194,224,.15)}
+.ahead{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;cursor:pointer;font-weight:700;font-size:.92rem;color:var(--navy);border-left:5px solid var(--cyan);transition:background .2s}
+.aitem.dark-acc .ahead{color:var(--cyan)}
+.ahead:hover{background:#f0f7ff}
+.aitem.dark-acc .ahead:hover{background:rgba(255,255,255,.06)}
+.aico{font-size:1.2rem;transition:transform .3s;flex-shrink:0}
+.abody{padding:0 1.4rem 1.2rem;display:none;font-size:.88rem;color:var(--muted);line-height:1.7}
+.aitem.dark-acc .abody{color:var(--light)}
+.abody.open{display:block}
+.abody ul{padding-left:1.2rem;margin-top:.5rem}
+.abody ul li{margin-bottom:.3rem}
+.abody strong{color:var(--navy)}
+.aitem.dark-acc .abody strong{color:var(--cyan)}
+
+/* TABS */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.tbtn{padding:7px 16px;border-radius:20px;border:2px solid var(--cyan);background:transparent;color:var(--navy);font-weight:700;font-size:.82rem;cursor:pointer;transition:all .2s}
+.tbtn.active,.tbtn:hover{background:var(--cyan);color:var(--navy)}
+.dark-bg .tbtn{color:var(--light);border-color:var(--cyan)}
+.dark-bg .tbtn.active,.dark-bg .tbtn:hover{color:var(--navy)}
+.tcontent{display:none}
+.tcontent.active{display:block}
+
+/* COMPARISON TABLE */
+.ctable{width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(11,31,75,.08);margin-top:1.5rem}
+.ctable th{background:var(--navy);color:var(--cyan);padding:12px 16px;text-align:left;font-size:.82rem;font-weight:800}
+.ctable td{padding:11px 16px;font-size:.85rem;border-bottom:1px solid var(--border);vertical-align:top;background:#fff}
+.ctable tr:nth-child(even) td{background:#f7faff}
+.ctable tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.68rem;font-weight:700}
+.b-works{background:#e0faf0;color:#00875a}
+.b-dead{background:#fde8e8;color:#c0392b}
+.b-tool{background:#e8f2ff;color:#1a3a7a}
+.b-warn{background:#fff8e0;color:#b8860b}
+
+/* CHECKLIST */
+.cklist{list-style:none;margin-top:1rem}
+.cklist li{display:flex;align-items:flex-start;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--text)}
+.cklist li:last-child{border-bottom:none}
+.ck{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0}
+.ck.yes{background:var(--mint);color:var(--navy)}
+.ck.no{background:#fde8e8;color:#c0392b}
+.ck.todo{background:#eef2ff;color:#5a6a8a;border:2px solid #d0d8ee}
+
+/* KEYWORD GRID */
+.kwgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.7rem;margin-top:1rem}
+.kwitem{background:#fff;border-radius:8px;padding:.7rem 1rem;border-left:4px solid var(--cyan);font-size:.83rem;box-shadow:0 2px 8px rgba(11,31,75,.06);display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.kwitem span{font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:10px;flex-shrink:0}
+.ki-info{background:#e8f4fd;color:#1565c0}
+.ki-comm{background:#fff3e0;color:#e65100}
+.ki-trans{background:#e8f5e9;color:#2e7d32}
+.ki-conv{background:#f3e5f5;color:#6a1b9a}
+
+/* PROGRESS */
+.pitem{margin-bottom:1rem}
+.plabel{display:flex;justify-content:space-between;font-size:.83rem;margin-bottom:4px;color:var(--text)}
+.pbar{height:10px;background:#e0e8f5;border-radius:10px;overflow:hidden}
+.pfill{height:100%;border-radius:10px}
+
+/* RESOURCE CARDS */
+.res-card{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 4px 18px rgba(11,31,75,.07);display:flex;gap:1rem;align-items:flex-start;transition:transform .2s}
+.res-card:hover{transform:translateY(-3px)}
+.res-icon{font-size:1.8rem;flex-shrink:0;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.res-card h4{font-size:.92rem;font-weight:800;color:var(--navy);margin-bottom:.2rem}
+.res-card p{font-size:.8rem;color:var(--muted)}
+.res-card a{font-size:.75rem;color:var(--cyan);text-decoration:none;font-weight:700}
+.res-card a:hover{text-decoration:underline}
+
+/* CALLOUT */
+.callout{border-radius:12px;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.92rem;border-left:5px solid}
+.callout.info{background:#e8f4fd;border-color:var(--cyan);color:#0a3a6a}
+.callout.success{background:#e8faf0;border-color:var(--mint);color:#0a4a2a}
+.callout.warn{background:#fff8e0;border-color:var(--yellow);color:#5a3d00}
+.callout.danger{background:#fde8e8;border-color:var(--red);color:#6a0000}
+
+/* ROADMAP */
+.roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;margin-top:1.5rem}
+.rphase{background:rgba(255,255,255,.06);border:1px solid rgba(0,194,224,.2);border-radius:14px;padding:1.4rem}
+.rph{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.rnum{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;flex-shrink:0}
+.rtitle{font-weight:800;font-size:.92rem}
+.rtime{font-size:.72rem;opacity:.7}
+.rtask{display:flex;gap:.6rem;align-items:flex-start;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.rtask:last-child{border-bottom:none}
+.rdot{width:7px;height:7px;border-radius:50%;margin-top:7px;flex-shrink:0}
+.rtxt{font-size:.82rem;color:var(--light)}
+
+/* FUNNEL */
+.funnel{max-width:460px;margin:2rem auto}
+.fbar{text-align:center;padding:.85rem 1rem;margin-bottom:4px;border-radius:6px;color:#fff;font-weight:700;font-size:.88rem}
+.fbar .fsub{font-size:.73rem;font-weight:400;opacity:.9;margin-top:2px}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--light);padding:2.5rem 1.5rem;text-align:center;border-top:3px solid var(--cyan)}
+footer a{color:var(--cyan);text-decoration:none}
+footer .ftag{color:var(--mint);font-weight:800}
+footer .fsrc{font-size:.75rem;opacity:.55;margin-top:.8rem;line-height:1.8}
+
+/* UTILITY */
+.mt1{margin-top:1rem}.mt2{margin-top:2rem}.mt3{margin-top:3rem}
+.tac{text-align:center}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:700;background:#e8f2ff;color:var(--navy)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">🤖 AI SEO & Conversational Search — 2026 Webinar</div>
+    <div class="nav-links">
+      <a href="#what-is">What is AI SEO</a>
+      <a href="#stats">Stats</a>
+      <a href="#conv-search">Conv. Search</a>
+      <a href="#works">Works vs Doesn't</a>
+      <a href="#blogging">Blog Writing</a>
+      <a href="#keywords">Keywords</a>
+      <a href="#tools">Tools</a>
+      <a href="#resources">Resources</a>
+      <a href="#roadmap">Roadmap</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">🚀 Live Webinar Guide · Updated April 2026</div>
+  <h1>AI-Driven SEO &<br><em>Conversational Search</em></h1>
+  <p class="hero-sub">Everything you need to understand, implement, and master the new rules of search — for any website, any niche, any team size.</p>
+  <div class="hero-pills">
+    <span class="pill">📊 Latest 2026 Stats</span>
+    <span class="pill">📝 Blog Writing Best Practices</span>
+    <span class="pill">🔑 Keyword Strategies</span>
+    <span class="pill">🛠 Top AI Tools</span>
+    <span class="pill">✅ What Works / ❌ What Doesn't</span>
+    <span class="pill">📺 YouTube Channels & Blogs</span>
+    <span class="pill">🗺 90-Day Roadmap</span>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><div class="n">25%</div><div class="l">of Google searches show AI Overviews (Q1 2026)</div></div>
+    <div class="hstat"><div class="n">60%</div><div class="l">of searches end with zero clicks</div></div>
+    <div class="hstat"><div class="n">527%</div><div class="l">YoY growth in AI-referred web sessions</div></div>
+    <div class="hstat"><div class="n">23×</div><div class="l">AI traffic converts higher than organic</div></div>
+    <div class="hstat"><div class="n">$7.3B</div><div class="l">GEO market size by 2031</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 1 — WHAT IS AI-DRIVEN SEO
+════════════════════════════════════ -->
+<div id="what-is" style="background:#EEF3FF">
+<div class="sec-wrap">
+  <div class="sec-label">Section 01</div>
+  <h2>What is AI-Driven SEO in 2026?</h2>
+  <p class="sec-intro">AI-Driven SEO is the application of artificial intelligence and machine learning across every stage of search optimization — from how search engines <em>rank</em> content to how marketers <em>create</em>, <em>optimize</em>, and <em>measure</em> it. In 2026 it has two distinct meanings you must understand separately.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="c-icon">🔍</div>
+      <h3>Meaning 1 — AI IN the Search Engine</h3>
+      <p>Google, Bing, Perplexity, and ChatGPT now use large language models (LLMs) to <strong>understand</strong> your content rather than just crawl keywords. They evaluate:</p>
+      <ul>
+        <li>Topic depth and semantic completeness</li>
+        <li>Entity relationships (who, what, where, why)</li>
+        <li>Genuine expertise vs AI-generated fluff</li>
+        <li>User satisfaction signals post-click</li>
+        <li>Content freshness and factual accuracy</li>
+      </ul>
+    </div>
+    <div class="card mint-t">
+      <div class="c-icon">🤖</div>
+      <h3>Meaning 2 — AI FOR the SEO Practitioner</h3>
+      <p>SEO professionals now use AI tools to automate and supercharge their work — turning weeks of manual effort into hours:</p>
+      <ul>
+        <li>AI keyword clustering (Semrush, Ahrefs)</li>
+        <li>NLP content scoring (Surfer SEO, Clearscope)</li>
+        <li>AI-assisted writing (Jasper, Frase)</li>
+        <li>Automated technical audits (Screaming Frog AI)</li>
+        <li>Predictive rank forecasting (BrightEdge)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout info mt2">
+    <strong>The 2026 Definition:</strong> AI-Driven SEO means optimizing content for both traditional search engines AND AI-powered answer engines (ChatGPT, Perplexity, Google AI Overviews) — while using AI tools to do the work faster, smarter, and at scale. If you only optimize for Google's 10 blue links, you're already behind.
+  </div>
+
+  <!-- How AI SEO differs from old SEO -->
+  <h3 style="margin-top:2.5rem;margin-bottom:.8rem;color:var(--navy)">Traditional SEO vs AI-Driven SEO — Side by Side</h3>
+  <table class="ctable">
+    <thead><tr><th>Dimension</th><th>Traditional SEO (Pre-2023)</th><th>AI-Driven SEO (2026)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Goal</strong></td><td>Rank #1 on Google</td><td>Appear in AI-generated answers + rank #1</td></tr>
+      <tr><td><strong>Keyword Focus</strong></td><td>Exact-match keywords, short-tail</td><td>Intent clusters, conversational long-tail questions</td></tr>
+      <tr><td><strong>Content Creation</strong></td><td>Manual keyword-stuffed articles</td><td>Human-led, AI-assisted, semantically rich content</td></tr>
+      <tr><td><strong>Ranking Signals</strong></td><td>Backlinks, meta tags, keyword density</td><td>E-E-A-T, entity authority, structured data, citations</td></tr>
+      <tr><td><strong>Research</strong></td><td>Hours of manual keyword research</td><td>AI clusters 1,000s of keywords in minutes</td></tr>
+      <tr><td><strong>Measurement</strong></td><td>Rankings + organic traffic</td><td>Rankings + AI Overview appearances + brand citations + conversions</td></tr>
+      <tr><td><strong>Content Update Cycle</strong></td><td>Quarterly / yearly</td><td>Continuous AI monitoring with real-time suggestions</td></tr>
+      <tr><td><strong>Zero-Click Reality</strong></td><td>Mostly ignored</td><td>Core strategy — brand visibility in AI answers matters even without clicks</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Flow: how AI SEO engine works -->
+  <h3 style="margin-top:2.5rem;margin-bottom:.5rem;color:var(--navy)">The AI SEO Engine — How It Works End to End</h3>
+  <div class="flow">
+    <div class="fstep"><div class="fn">1</div><h4>Crawl & Ingest</h4><p>AI tools crawl your site, SERPs, and competitors 24/7</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--mint)"><div class="fn" style="background:var(--mint)">2</div><h4>Intent Analysis</h4><p>NLP decodes what users really want from each query</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--yellow)"><div class="fn" style="background:var(--yellow)">3</div><h4>Gap Mapping</h4><p>AI identifies missing topics, keywords, entities on your site</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--orange)"><div class="fn" style="background:var(--orange);color:#fff">4</div><h4>Content Brief</h4><p>AI generates NLP-scored brief with all entities to cover</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--purple)"><div class="fn" style="background:var(--purple);color:#fff">5</div><h4>Human Creates</h4><p>Human expert writes with AI assistance; real experience added</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--navy)"><div class="fn" style="background:var(--navy)">6</div><h4>Publish + Schema</h4><p>Structured data added; page submitted to GSC</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--mint)"><div class="fn" style="background:var(--mint)">7</div><h4>Monitor & Iterate</h4><p>AI tracks rank, AI citations, CTR; flags what needs updating</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION 2 — LATEST STATS
+══════════════════════════════ -->
+<div id="stats" style="background:#fff">
+<div class="sec-wrap">
+  <div class="sec-label mint">Section 02</div>
+  <h2>Latest AI SEO Statistics — 2025 & 2026</h2>
+  <p class="sec-intro">Data verified from primary research sources including Conductor (21.9M searches), Superlines, Semrush, Similarweb, Digitaloft, and Position Digital — all updated April 2026.</p>
+
+  <div class="stat-strip">
+    <div class="ss-item"><div class="ss-n">25.11%</div><div class="ss-d">of all Google searches trigger an AI Overview — up 57% from Q4 2025</div><div class="ss-s">Conductor, Q1 2026</div></div>
+    <div class="ss-item"><div class="ss-n">57.9%</div><div class="ss-d">of question-based queries show AI Overviews</div><div class="ss-s">Position Digital, 2026</div></div>
+    <div class="ss-item"><div class="ss-n">60%</div><div class="ss-d">of all searches end without a single click (zero-click)</div><div class="ss-s">Similarweb, 2025</div></div>
+    <div class="ss-item"><div class="ss-n">527%</div><div class="ss-d">YoY growth in AI-referred website sessions (H1 2025)</div><div class="ss-s">Superlines, 2025</div></div>
+    <div class="ss-item"><div class="ss-n">87.4%</div><div class="ss-d">of AI referral traffic to websites comes from ChatGPT</div><div class="ss-s">Superlines, 2025</div></div>
+    <div class="ss-item"><div class="ss-n">15.9%</div><div class="ss-d">conversion rate for ChatGPT-referred visitors vs 1.76% organic</div><div class="ss-s">Digitaloft, 2026</div></div>
+    <div class="ss-item"><div class="ss-n">0.664</div><div class="ss-d">correlation between branded web mentions and AI Overview appearances (backlinks: 0.218)</div><div class="ss-s">Semrush Research, 2026</div></div>
+    <div class="ss-item"><div class="ss-n">35%</div><div class="ss-d">more organic clicks earned by brands cited in AI Overviews vs not cited</div><div class="ss-s">Digitaloft, 2026</div></div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="cbox">
+      <h4>AI Search Market Share 2026</h4>
+      <p class="csub">ChatGPT + Gemini control ~86% of AI search market</p>
+      <canvas id="c1"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>Conversion Rates: AI Sources vs Google Organic</h4>
+      <p class="csub">LLM-referred traffic converts 3–9× higher than standard organic</p>
+      <canvas id="c2"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>AI Overview Trigger Rate by Query Type</h4>
+      <p class="csub">Questions dominate — optimize for question format</p>
+      <canvas id="c3"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>Zero-Click Search Growth (2020–2026)</h4>
+      <p class="csub">Zero-click searches have grown from 34% to 60% in 6 years</p>
+      <canvas id="c4"></canvas>
+    </div>
+  </div>
+
+  <div class="callout warn mt2">
+    <strong>Key Insight:</strong> Zero-click doesn't mean zero-value. Brands that appear in AI-generated answers build recognition and trust even without a click. When users later search with purchase intent, they're far more likely to choose a brand they've already "seen" answer their question.
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — CONVERSATIONAL SEARCH
+══════════════════════════════════════ -->
+<div id="conv-search" style="background:#EEF3FF">
+<div class="sec-wrap">
+  <div class="sec-label yellow">Section 03</div>
+  <h2>Conversational Search — Explained in Full</h2>
+  <p class="sec-intro">Conversational search is the shift from typing short keyword strings ("best SEO tool") to asking full natural-language questions ("What's the best SEO tool for a small business just starting out?"). This changes <em>everything</em> about how you write content and target queries.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="c-icon">🗣️</div>
+      <h3>What Changed</h3>
+      <p>Users now interact with search engines like they interact with people. They use full sentences, follow-up questions, voice queries, and multi-turn dialogue. The search engine doesn't just match keywords — it <strong>understands context, intent, and history</strong>.</p>
+    </div>
+    <div class="card yellow-t">
+      <div class="c-icon">🧠</div>
+      <h3>How AI Engines Process It</h3>
+      <p>LLMs parse the query for:</p>
+      <ul>
+        <li><strong>Primary intent</strong> — what the user wants to do</li>
+        <li><strong>Context signals</strong> — location, history, device</li>
+        <li><strong>Entity relationships</strong> — who/what is involved</li>
+        <li><strong>Expected answer format</strong> — list, definition, steps</li>
+      </ul>
+    </div>
+    <div class="card orange-t">
+      <div class="c-icon">📊</div>
+      <h3>Scale of the Shift</h3>
+      <ul>
+        <li>27% of US voice queries are fully conversational</li>
+        <li>40% of Gen Z uses AI tools instead of Google for research</li>
+        <li>800–900M weekly active users on ChatGPT (2026)</div></li>
+        <li>1.5B monthly users see Google AI Overviews</li>
+        <li>Perplexity grew 300%+ YoY in 2025</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- How it works flow -->
+  <h3 style="margin-top:2.5rem;margin-bottom:.5rem;color:var(--navy)">How a Conversational Query Becomes a Citation</h3>
+  <div class="flow">
+    <div class="fstep"><div class="fn">1</div><h4>User Asks</h4><p>"How do I get more traffic to my blog without paying for ads?"</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--yellow)"><div class="fn" style="background:var(--yellow)">2</div><h4>LLM Parses Intent</h4><p>Organic traffic strategies, blog focus, budget-conscious user, beginner/intermediate level</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--orange)"><div class="fn" style="background:var(--orange);color:#fff">3</div><h4>Scans Web</h4><p>Retrieves top authoritative, structured, citable content on the topic</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--mint)"><div class="fn" style="background:var(--mint)">4</div><h4>Synthesizes Answer</h4><p>Generates a natural language response citing the most credible sources</p></div>
+    <div class="farrow">→</div>
+    <div class="fstep" style="border-top-color:var(--purple)"><div class="fn" style="background:var(--purple);color:#fff">5</div><h4>YOUR Content Cited</h4><p>If your page answers this well with E-E-A-T + schema — you get the citation ✅</p></div>
+  </div>
+
+  <h3 style="margin-top:2.5rem;margin-bottom:.8rem;color:var(--navy)">Major Conversational Search Platforms You Must Optimize For</h3>
+  <div class="grid-3">
+    <div class="card"><div class="c-icon">🔵</div><h3>Google AI Overviews (SGE)</h3><p>Appears on 25%+ of searches. 99% cite from organic top-10. The most critical platform for most publishers. Triggered heavily by question queries (57.9%).</p><div class="tag-row"><span class="tag">FAQ Schema</span><span class="tag">E-E-A-T</span><span class="tag">Top-10 Rankings</span></div></div>
+    <div class="card mint-t"><div class="c-icon">💬</div><h3>ChatGPT Search</h3><p>800–900M weekly active users. Drives 87.4% of all AI referral traffic. 31% of prompts trigger web search. Conversion rate of 15.9% from referred visitors.</p><div class="tag-row"><span class="tag">Citable Stats</span><span class="tag">Structured Content</span><span class="tag">Author Authority</span></div></div>
+    <div class="card yellow-t"><div class="c-icon">🔎</div><h3>Perplexity AI</h3><p>High-intent research audience. 10.5% conversion rate from referrals. Prefers fact-dense, well-sourced content. Grew 300%+ in 2025 — key platform for B2B.</p><div class="tag-row"><span class="tag">Data & Sources</span><span class="tag">Comparison Content</span><span class="tag">Domain Authority</span></div></div>
+    <div class="card orange-t"><div class="c-icon">🪟</div><h3>Microsoft Copilot</h3><p>Integrated in Edge, Windows 11, Microsoft 365. Critical for B2B audiences using enterprise tools. Favors Bing-indexed pages with strong structured data.</p><div class="tag-row"><span class="tag">Bing Indexing</span><span class="tag">Schema Markup</span><span class="tag">Business Intent</span></div></div>
+    <div class="card purple-t"><div class="c-icon">🎤</div><h3>Voice Search (Siri/Google)</h3><p>27% of US voice queries are conversational questions. Answers must be concise (40–60 words), direct, and conversational. Apple Intelligence is expanding rapidly on iOS 18+.</p><div class="tag-row"><span class="tag">Concise Answers</span><span class="tag">Local SEO</span><span class="tag">Featured Snippets</span></div></div>
+    <div class="card navy-t"><div class="c-icon">🤖</div><h3>Agentic AI (Emerging)</h3><p>AI agents (OpenAI Operator, Gemini Agents) autonomously browse and compare products. Structured data and machine-readable content determines if AI agents discover your brand.</p><div class="tag-row"><span class="tag">Structured Data</span><span class="tag">Clear Pricing</span><span class="tag">API Docs</span></div></div>
+  </div>
+
+  <div class="chart-grid mt2">
+    <div class="cbox">
+      <h4>AI Platform Conversion Rates (2026)</h4>
+      <p class="csub">Higher conversion from AI-referred sessions vs traditional organic</p>
+      <canvas id="c5"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>Share of AI Referral Traffic by Platform</h4>
+      <p class="csub">ChatGPT dominates AI referral traffic to websites</p>
+      <canvas id="c6"></canvas>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 4 — WORKS VS DOESN'T
+══════════════════════════════════ -->
+<div id="works" class="dark-bg">
+<div class="sec-wrap">
+  <div class="sec-label red">Section 04</div>
+  <h2>What Works in 2026 — and What's Dead</h2>
+  <p class="sec-intro">The SEO landscape has fundamentally changed. Tactics that drove traffic in 2022 are now penalties. Here is the definitive 2026 list.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color:var(--mint);margin-bottom:1rem">✅ What WORKS in 2026</h3>
+      <div class="accordion">
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">E-E-A-T: Experience, Expertise, Authoritativeness, Trust <span class="aico">+</span></div>
+          <div class="abody"><p>Google's Helpful Content system and AI engines both reward genuine first-hand experience. <strong>What works:</strong> author bios with real credentials, first-person experience woven into content, citing original research and case studies, expert quotes and interviews, transparent "about" pages. A post written by someone who has actually <em>done</em> the thing will outrank AI-generated content without experience signals every time.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Answer Engine Optimization (AEO) <span class="aico">+</span></div>
+          <div class="abody"><p>AEO means structuring your content to be the direct answer to a specific question — not just ranking for it. <strong>What works:</strong> write a 40–60 word direct answer in the first paragraph, use FAQ schema on every key page, target "People Also Ask" question formats, add HowTo schema to tutorial content, and write intro paragraphs that answer the title question immediately. AI engines pull the clearest, most concise answers first.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Topic Authority Clusters (not single pages) <span class="aico">+</span></div>
+          <div class="abody"><p>Google's AI understands whether your site is a true authority on a topic or just has one article about it. <strong>What works:</strong> create a pillar page on a broad topic (e.g. "SEO Guide") + 8–15 supporting posts targeting long-tail subtopics, all internally linked. This signals deep expertise. Google's Helpful Content update rewards sites that cover topics comprehensively, not sites that chase isolated keywords.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Semantic SEO & Entity Optimization <span class="aico">+</span></div>
+          <div class="abody"><p>AI search engines don't just match keywords — they map entities (people, places, concepts) and their relationships. <strong>What works:</strong> use related terms and synonyms naturally (not just the exact keyword), add schema markup to help AI engines understand what your content is about, mention relevant entities (brands, tools, concepts) in your content, and build topical associations through consistent publishing on your core subject area.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Structured Data / Schema Markup <span class="aico">+</span></div>
+          <div class="abody"><p>Schema markup is now an AI eligibility signal — not just a SERP enhancement. <strong>What works:</strong> FAQ schema (required for AI Overview eligibility), HowTo schema on tutorial pages, Article schema with author info, SoftwareApplication schema for tools, Review schema for testimonials. Use JSON-LD format. Validate with Google's Rich Results Test after every addition. Pages with FAQ schema are 2× more likely to appear in AI Overviews.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Original Data, Research & Statistics <span class="aico">+</span></div>
+          <div class="abody"><p>AI engines like ChatGPT and Perplexity are specifically looking for content they can cite. The most citable content contains original data. <strong>What works:</strong> publish annual surveys ("State of [Your Industry] 2026"), share internal platform data, create original charts and infographics, write up case study results with real numbers. Branded statistics ("According to [Your Brand]'s research of 10,000 users...") earn massive citation value from both AI engines and human writers.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Conversational Long-Tail Keywords <span class="aico">+</span></div>
+          <div class="abody"><p>Short-tail keywords ("SEO tips") are dominated by giants. Question-format long-tail keywords are winnable by anyone. <strong>What works:</strong> target full-question keywords like "How do I improve my website's SEO without hiring an agency?", "What is the difference between SEO and GEO?", "Which is better for small businesses: paid search or organic SEO?". Use AlsoAsked, AnswerThePublic, and Google's People Also Ask box to find these. Each question is a potential AI Overview citation.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)">Video SEO + Transcript Optimization <span class="aico">+</span></div>
+          <div class="abody"><p>YouTube videos now appear in Google AI Overviews. Transcripts are indexed and cited by AI engines. <strong>What works:</strong> publish YouTube tutorials with keyword-rich titles and descriptions, add auto-generated or manual transcripts, embed videos on your website pages, add VideoObject schema markup. A single well-optimized tutorial video can drive AI Overview appearances, YouTube rankings, and website traffic simultaneously.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="color:var(--red);margin-bottom:1rem">❌ What's DEAD or DANGEROUS in 2026</h3>
+      <div class="accordion">
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">Pure AI-Generated, Thin Content <span class="aico">+</span></div>
+          <div class="abody"><p>Google's Helpful Content system specifically targets pages that feel "created for search engines rather than people." <strong>What's dead:</strong> hitting "generate" in ChatGPT and publishing without adding real experience, expertise, or original insight. A 1,500-word AI-drafted article with no human expertise signals will rank below a 600-word post written by a genuine expert. Google <em>can</em> detect patterns of unreviewed AI content at scale.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">Keyword Stuffing & Exact-Match Obsession <span class="aico">+</span></div>
+          <div class="abody"><p>Repeating a keyword 15 times in a 1,000-word article is now a penalty signal, not a ranking signal. <strong>What's dead:</strong> forcing exact-match keywords into headings, meta descriptions, and body text at unnatural density. AI search engines understand synonyms and related terms — write naturally for humans and use the exact keyword once or twice where it flows naturally.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">Low-Quality Backlink Schemes <span class="aico">+</span></div>
+          <div class="abody"><p>Backlinks still matter, but their correlation with AI Overview appearances is 0.218 — far weaker than branded mentions (0.664). <strong>What's dead:</strong> link farms, PBNs (private blog networks), paid link schemes, and directory spam. These now trigger Google penalties. What matters more in 2026: getting genuinely mentioned (even without a link) on credible sites — because AI engines count those brand mentions as authority signals.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">Ignoring Page Experience & Core Web Vitals <span class="aico">+</span></div>
+          <div class="abody"><p>Technical performance is a baseline requirement — not a differentiator. <strong>What will kill you:</strong> pages taking 4+ seconds to load, poor mobile experience, aggressive pop-ups blocking content, intrusive interstitials. Google's Page Experience signals are baked into ranking algorithms. Even excellent content on a slow, clunky page will underperform. Aim for LCP under 2.5s, FID under 100ms, CLS under 0.1.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">Ignoring AI Overview & GEO Optimization <span class="aico">+</span></div>
+          <div class="abody"><p>If your SEO strategy doesn't include optimizing to appear in AI-generated answers, you're already losing visibility. <strong>What's dangerous:</strong> assuming traditional rank #1 is enough. 25%+ of searches now show AI Overviews that appear ABOVE the first organic result. Brands that rank #1 but aren't cited in the AI Overview can still lose most of their click traffic. You must optimize for both.</p></div>
+        </div>
+        <div class="aitem dark-acc">
+          <div class="ahead" onclick="ta(this)" style="border-left-color:var(--red)">One-and-Done Content Strategy <span class="aico">+</span></div>
+          <div class="abody"><p>Publishing 10 posts and waiting is not a strategy. <strong>What's dead:</strong> set-and-forget content. AI-powered search engines favor fresh, regularly updated content. Articles with outdated statistics, tools that no longer exist, or practices from 3 years ago actively hurt your credibility scores. Build a content update schedule — review and refresh high-traffic pages every 6 months, update stats annually.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-grid mt3">
+    <div class="cbox">
+      <h4>GEO Market Growth Projection ($B)</h4>
+      <p class="csub">34% CAGR — Generative Engine Optimization is the fastest growing SEO segment</p>
+      <canvas id="c7"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>Correlation With AI Overview Appearances (2026)</h4>
+      <p class="csub">Brand mentions matter MORE than backlinks for AI visibility</p>
+      <canvas id="c8"></canvas>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 5 — BLOG WRITING
+══════════════════════════════════ -->
+<div id="blogging" style="background:#fff">
+<div class="sec-wrap">
+  <div class="sec-label orange">Section 05</div>
+  <h2>How to Write Blogs for AI SEO in 2026</h2>
+  <p class="sec-intro">Blog writing has fundamentally changed. The goal is no longer just to rank on Google — it's to get cited by AI engines, earn featured snippets, and genuinely help readers. Here is the complete framework.</p>
+
+  <div class="tabs">
+    <button class="tbtn active" onclick="st(this,'t-structure')">📐 Structure</button>
+    <button class="tbtn" onclick="st(this,'t-writing')">✍️ Writing Style</button>
+    <button class="tbtn" onclick="st(this,'t-schema')">🏷️ Schema & Markup</button>
+    <button class="tbtn" onclick="st(this,'t-eeat')">🏆 E-E-A-T Signals</button>
+    <button class="tbtn" onclick="st(this,'t-update')">🔄 Updating Content</button>
+  </div>
+
+  <div id="t-structure" class="tcontent active">
+    <div class="grid-2">
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem">📐 The AI-Optimized Blog Structure</h3>
+        <div class="accordion">
+          <div class="aitem"><div class="ahead" onclick="ta(this)">1. Title — Write as a Question or Promise <span class="aico">+</span></div><div class="abody"><p>Titles written as questions match conversational search queries exactly. <strong>Examples that work:</strong> "How to Do SEO in 2026 (Step-by-Step Guide)", "What is Conversational Search and Why Does It Matter?", "Why is My Website Not Ranking? 7 Real Reasons (+ Fixes)". Use the target keyword naturally. Keep under 65 characters for SERP display. Include the year for freshness signals.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">2. Opening Paragraph — Answer First, Explain After <span class="aico">+</span></div><div class="abody"><p>AI engines pull the first direct answer from your article. <strong>The pattern:</strong> Sentence 1 = direct answer to the title question (40–60 words). Sentence 2–3 = what the article will cover. Do NOT start with "In today's digital world..." or generic warm-up paragraphs. Get straight to the answer. Example: "Conversational search optimization means structuring your content to answer natural-language questions directly, using schema markup, FAQ sections, and intent-matched headings — so AI engines cite your page when users ask related questions."</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">3. Headings — Use Question Format for H2/H3 <span class="aico">+</span></div><div class="abody"><p>Question-format headings match People Also Ask queries and voice search patterns. <strong>Instead of:</strong> "SEO Tips" → <strong>Use:</strong> "What Are the Most Effective SEO Tips in 2026?". Instead of "Keyword Research" → "How Do You Find the Right Keywords for Your Blog?". Each H2 should be a standalone question a user might ask an AI engine. This structure makes your content easy for AI to parse and cite specific sections.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">4. FAQ Section — Non-Negotiable <span class="aico">+</span></div><div class="abody"><p>Every blog post should have a FAQ section with 5–8 question-and-answer pairs at the bottom. Each answer should be 40–80 words. These are the exact snippets AI engines pull for conversational answers. Add FAQ schema markup to make them machine-readable. Research questions using AlsoAsked, Google's People Also Ask box, and customer support queries from your real audience.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">5. Content Length — Match Depth to Intent <span class="aico">+</span></div><div class="abody"><p>Content length should match what the topic genuinely requires — not a target word count. <strong>Guidelines:</strong> Informational guides = 1,500–3,500 words (comprehensive coverage). How-to posts = 1,000–2,000 words with clear steps. Comparison articles = 2,000–4,000 words (cover all angles). FAQ posts = 800–1,500 words (concise, direct). Use Surfer SEO or Clearscope to see what length top-ranking pages use for your specific keyword.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="callout info">
+          <strong>The Inverted Pyramid Model for AI-Optimized Blogs:</strong><br><br>
+          🔺 <strong>Top:</strong> Direct answer to the main question (40–60 words)<br>
+          📋 <strong>Middle:</strong> Supporting evidence, steps, examples, data<br>
+          🔗 <strong>Bottom:</strong> FAQ section with schema + related resources + CTA<br><br>
+          AI engines read top-to-bottom and extract the clearest, earliest answer they find. Your most important sentence is your first one.
+        </div>
+        <div class="callout success mt2">
+          <strong>Blog Post Checklist (Before Publishing):</strong>
+          <ul style="padding-left:1.2rem;margin-top:.5rem;font-size:.88rem">
+            <li>✅ Title is under 65 chars and includes target keyword</li>
+            <li>✅ Opening paragraph directly answers the title question</li>
+            <li>✅ At least 2 H2s written in question format</li>
+            <li>✅ At least one original stat, data point, or case study</li>
+            <li>✅ FAQ section with 5+ Q&As at the bottom</li>
+            <li>✅ FAQ schema markup added (JSON-LD)</li>
+            <li>✅ Author bio with name, title, and credentials</li>
+            <li>✅ Internal links to 2–3 related pages on your site</li>
+            <li>✅ Meta description answers the search intent (under 155 chars)</li>
+            <li>✅ Published date + "Updated [Month Year]" shown visibly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="t-writing" class="tcontent">
+    <div class="grid-3">
+      <div class="card">
+        <div class="c-icon">💬</div>
+        <h3>Write Conversationally</h3>
+        <p>Write like you're explaining to a smart friend — not writing a formal report. Use "you" and "we". Ask rhetorical questions. Break complex ideas into simple sentences. Vary sentence length. Short sentences punch. Longer sentences build context and nuance.</p>
+        <div class="callout info" style="margin-top:.8rem;font-size:.82rem"><strong>Test:</strong> Read your draft aloud. If it sounds like a robot wrote it, it will read like one too.</div>
+      </div>
+      <div class="card mint-t">
+        <div class="c-icon">🎯</div>
+        <h3>Match Tone to Search Intent</h3>
+        <ul>
+          <li><strong>Informational:</strong> Educational, neutral, clear definitions</li>
+          <li><strong>Commercial:</strong> Comparative, balanced, pros/cons</li>
+          <li><strong>Transactional:</strong> Action-oriented, benefit-focused, urgent</li>
+          <li><strong>Conversational:</strong> Warm, first-person, question-and-answer</li>
+        </ul>
+        <p style="margin-top:.5rem">Wrong tone = high bounce rate = ranking signal drop.</p>
+      </div>
+      <div class="card yellow-t">
+        <div class="c-icon">📝</div>
+        <h3>Use the "SEEAT" Writing Framework</h3>
+        <ul>
+          <li><strong>S</strong>tatement — clear claim or answer</li>
+          <li><strong>E</strong>xplanation — what it means</li>
+          <li><strong>E</strong>xample — real-world illustration</li>
+          <li><strong>A</strong>ction — what the reader should do</li>
+          <li><strong>T</strong>ransition — lead naturally to next point</li>
+        </ul>
+        <p style="margin-top:.5rem">Use this for every major section. It creates scannable, logical content AI loves.</p>
+      </div>
+      <div class="card orange-t">
+        <div class="c-icon">📊</div>
+        <h3>Back Every Claim with Data</h3>
+        <p>AI engines specifically look for <strong>citable</strong> content. Every significant claim should have:</p>
+        <ul>
+          <li>A specific statistic ("60% of searches...")</li>
+          <li>A named source ("According to Semrush...")</li>
+          <li>A year ("in 2026" or "as of Q1 2026")</li>
+        </ul>
+        <p style="margin-top:.5rem">This is what separates content AI cites from content it ignores.</p>
+      </div>
+      <div class="card purple-t">
+        <div class="c-icon">🔢</div>
+        <h3>Use Formatting for Scannability</h3>
+        <ul>
+          <li>Short paragraphs (3–4 lines max)</li>
+          <li>Numbered lists for steps/processes</li>
+          <li>Bullet lists for features/comparisons</li>
+          <li>Bold for key terms and takeaways</li>
+          <li>Tables for comparisons and specs</li>
+          <li>Callout boxes for key insights</li>
+        </ul>
+      </div>
+      <div class="card navy-t">
+        <div class="c-icon">🧑‍💼</div>
+        <h3>Add Real Human Experience</h3>
+        <p>Google Helpful Content specifically rewards pages showing first-hand experience. Add:</p>
+        <ul>
+          <li>Personal experience ("When I tested this...")</li>
+          <li>Real results ("We saw a 34% increase...")</li>
+          <li>Mistakes made and lessons learned</li>
+          <li>Original screenshots and examples</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="t-schema" class="tcontent">
+    <h3 style="color:var(--navy);margin-bottom:1rem">🏷️ Schema Markup — The AI Eligibility Signal</h3>
+    <p style="color:var(--muted);margin-bottom:1.5rem">Schema markup (structured data) tells AI engines exactly what your content is and what questions it answers. Pages with FAQ schema are significantly more likely to appear in AI Overviews and voice search answers.</p>
+    <table class="ctable">
+      <thead><tr><th>Schema Type</th><th>Use On</th><th>What It Does</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td><strong>FAQ Schema</strong></td><td>Every blog post, product page</td><td>Makes Q&A pairs machine-readable; primary trigger for AI Overviews</td><td><span class="badge b-works">🔥 Essential</span></td></tr>
+        <tr><td><strong>HowTo Schema</strong></td><td>Tutorial & step-by-step posts</td><td>Enables rich results showing numbered steps; cited in voice answers</td><td><span class="badge b-works">🔥 Essential</span></td></tr>
+        <tr><td><strong>Article Schema</strong></td><td>All blog articles</td><td>Signals author, publish date, topic to AI engines; E-E-A-T booster</td><td><span class="badge b-works">High</span></td></tr>
+        <tr><td><strong>BreadcrumbList</strong></td><td>All pages</td><td>Helps AI understand site hierarchy; improves indexing</td><td><span class="badge b-tool">Medium</span></td></tr>
+        <tr><td><strong>Organization</strong></td><td>Homepage / About page</td><td>Establishes brand entity; increases AI Overview brand mentions</td><td><span class="badge b-works">High</span></td></tr>
+        <tr><td><strong>SitelinksSearchBox</strong></td><td>Homepage</td><td>Enables on-site search in Google results; brand authority signal</td><td><span class="badge b-tool">Medium</span></td></tr>
+        <tr><td><strong>Review / AggregateRating</strong></td><td>Product/service pages</td><td>Star ratings in SERPs; trust signal for AI engines</td><td><span class="badge b-works">High</span></td></tr>
+        <tr><td><strong>VideoObject</strong></td><td>Pages with embedded video</td><td>YouTube videos appear in AI Overviews; massive visibility boost</td><td><span class="badge b-works">High</span></td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn mt2"><strong>How to add schema:</strong> Use JSON-LD format (Google's preferred method) and place it in the &lt;head&gt; or at the end of the &lt;body&gt; tag. Validate every schema addition at <strong>search.google.com/test/rich-results</strong> before publishing. Wrong schema can cause errors that suppress your rich results.</div>
+  </div>
+
+  <div id="t-eeat" class="tcontent">
+    <div class="grid-2">
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem">🏆 Building E-E-A-T Signals That AI Engines Trust</h3>
+        <p style="color:var(--muted);margin-bottom:1rem">E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is both a Google quality rating framework AND a set of signals that AI engines use to decide whether to cite your content. Here's how to build each one:</p>
+        <div class="accordion">
+          <div class="aitem"><div class="ahead" onclick="ta(this)">Experience — Show You've Done It <span class="aico">+</span></div><div class="abody"><p>Add first-person accounts of actually doing what you're writing about. Include original screenshots, results data, timelines, and failures alongside successes. "I tested 7 different AI SEO tools over 90 days — here's what actually happened" is infinitely more credible to AI engines than a generic overview article.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">Expertise — Demonstrate Deep Knowledge <span class="aico">+</span></div><div class="abody"><p>Write author bios that include: job title, years of experience, certifications, notable projects, and published work. Link author bios to a personal LinkedIn or portfolio. Use technical terminology correctly (not just keyword-stuffed). Go deeper than competitors — cover nuances, edge cases, and advanced considerations.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">Authoritativeness — Get Mentioned by Others <span class="aico">+</span></div><div class="abody"><p>Authority is largely earned externally. Branded web mentions have a 0.664 correlation with AI Overview appearances — stronger than backlinks. Build authority by: getting featured in industry publications, being quoted as an expert, earning reviews on G2/Capterra/Trustpilot, having Wikipedia mentions, guest posting on authoritative sites, and being cited by other credible content.</p></div></div>
+          <div class="aitem"><div class="ahead" onclick="ta(this)">Trustworthiness — Remove All Doubt <span class="aico">+</span></div><div class="abody"><p>Trust signals AI engines look for: HTTPS and security certificates, clear privacy policy and terms, visible contact information, transparent ownership ("About" page), date-stamped and regularly updated content, cited sources for statistics, no broken links, consistent brand identity across the site. Any trust gaps reduce the likelihood of your content being cited.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>E-E-A-T Quick Wins — Implement This Week</h3>
+          <ul class="cklist">
+            <li><span class="ck yes">✓</span>Add a real author bio with photo, title, and credentials to every post</li>
+            <li><span class="ck yes">✓</span>Add "Expert reviewed by [Name]" for health, finance, legal content</li>
+            <li><span class="ck yes">✓</span>Show "Last updated [Month Year]" prominently on every article</li>
+            <li><span class="ck yes">✓</span>Add an About page with team photos and company history</li>
+            <li><span class="ck yes">✓</span>Link to all data sources with inline citations</li>
+            <li><span class="ck todo">○</span>Earn a mention in at least one industry publication this month</li>
+            <li><span class="ck todo">○</span>Publish one piece of original research using your own data</li>
+            <li><span class="ck todo">○</span>Set up Google Knowledge Panel for your brand entity</li>
+            <li><span class="ck todo">○</span>Get 5+ new reviews on G2 or Capterra this quarter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="t-update" class="tcontent">
+    <div class="grid-2">
+      <div class="card">
+        <div class="c-icon">🔄</div>
+        <h3>The Content Update Framework</h3>
+        <p>Publishing is just the start. AI-powered search engines specifically reward freshness and accuracy. A content update schedule is non-negotiable in 2026.</p>
+        <table class="ctable" style="margin-top:1rem">
+          <thead><tr><th>Content Type</th><th>Update Frequency</th></tr></thead>
+          <tbody>
+            <tr><td>Statistics & data posts</td><td>Every 6 months</td></tr>
+            <tr><td>Tool comparisons / reviews</td><td>Quarterly</td></tr>
+            <tr><td>Pillar / evergreen guides</td><td>Every 6–12 months</td></tr>
+            <tr><td>Industry news / trends</td><td>Monthly or as needed</td></tr>
+            <tr><td>Product / pricing pages</td><td>Whenever it changes</td></tr>
+            <tr><td>How-to tutorials</td><td>Annually (min)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card mint-t">
+        <div class="c-icon">📋</div>
+        <h3>What to Update in Each Refresh</h3>
+        <ul>
+          <li>Replace outdated stats with current year data</li>
+          <li>Update tool screenshots and UI descriptions</li>
+          <li>Add new FAQs based on current People Also Ask</li>
+          <li>Refresh the title to include the current year</li>
+          <li>Add a "What changed in [Year]" section at the top</li>
+          <li>Fix any broken internal or external links</li>
+          <li>Re-run Surfer/Clearscope score and close any new gaps</li>
+          <li>Add new schema markup types if applicable</li>
+          <li>Add the "Last Updated" date visibly in the article</li>
+        </ul>
+        <div class="callout success" style="margin-top:.8rem;font-size:.82rem"><strong>Tip:</strong> A well-updated old post often outperforms a brand-new post — Google's freshness signals reward meaningful updates.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 6 — KEYWORD STRATEGY
+══════════════════════════════════ -->
+<div id="keywords" style="background:#EEF3FF">
+<div class="sec-wrap">
+  <div class="sec-label purple">Section 06</div>
+  <h2>Keyword Strategy for AI SEO & Conversational Search</h2>
+  <p class="sec-intro">The keyword game has completely changed. You're no longer optimizing for isolated search terms — you're mapping content to <em>intent clusters</em>, <em>question formats</em>, and <em>conversation patterns</em>. Here's the full 2026 keyword playbook.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="c-icon">🎯</div>
+      <h3>Intent-Based Clustering</h3>
+      <p>Stop targeting one keyword per page. Instead, identify the <strong>intent</strong> behind a topic and cluster all related keywords into one comprehensive page. A page targeting "SEO for beginners" should also naturally rank for "how to start SEO", "beginner SEO guide", "learn SEO step by step" — because the intent is the same.</p>
+    </div>
+    <div class="card mint-t">
+      <div class="c-icon">❓</div>
+      <h3>Question-Format Keywords</h3>
+      <p>In 2026, question-format keywords are the most valuable for conversational search. Why? Because they mirror exactly how people ask AI engines. "Best SEO software" = old style. "What is the best SEO software for a small business in 2026?" = conversational gold. Use AlsoAsked, PAA boxes, and AnswerThePublic to find hundreds of these.</p>
+    </div>
+    <div class="card yellow-t">
+      <div class="c-icon">🔊</div>
+      <h3>Voice Search Keywords</h3>
+      <p>Voice searches are 3× longer and far more conversational than typed queries. They often include:</p>
+      <ul>
+        <li>"How do I..." / "What is..."</li>
+        <li>"Near me" + local intent</li>
+        <li>"Should I..." / "Is it worth..."</li>
+        <li>Complete sentences, not fragments</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.5rem;margin-bottom:.5rem;color:var(--navy)">The 4 Intent Categories — How to Target Each</h3>
+  <div class="grid-4">
+    <div class="card"><div class="c-icon">📚</div><h3 style="color:#1565c0">Informational</h3><p>Users want to learn. Write guides, explainers, how-tos, comparisons. Use FAQ schema. Target "what is", "how to", "why does" queries. Goal: earn AI Overview citations.</p></div>
+    <div class="card yellow-t"><div class="c-icon">🛒</div><h3 style="color:#e65100">Commercial</h3><p>Users are comparing options. Write comparison articles, reviews, "best X for Y" posts. Include feature tables, pros/cons, pricing. Goal: convert researchers into visitors.</p></div>
+    <div class="card mint-t"><div class="c-icon">💳</div><h3 style="color:#2e7d32">Transactional</h3><p>Users are ready to act. Optimize landing pages with clear CTAs, trust signals, testimonials. Speed matters — every second of load time costs conversions.</p></div>
+    <div class="card purple-t"><div class="c-icon">💬</div><h3 style="color:#6a1b9a">Conversational</h3><p>The new category — users asking AI tools full questions expecting direct answers. Write content that directly answers one specific question in 50 words or less, then expands.</p></div>
+  </div>
+
+  <h3 style="margin-top:2.5rem;margin-bottom:.5rem;color:var(--navy)">Example Keyword Transformation — Old vs New</h3>
+  <table class="ctable">
+    <thead><tr><th>Old Keyword (2020)</th><th>New Conversational Version (2026)</th><th>Intent</th><th>Why It Works</th></tr></thead>
+    <tbody>
+      <tr><td>SEO tips</td><td>What are the most important SEO tips for 2026?</td><td><span class="badge" style="background:#e8f4fd;color:#1565c0">INFO</span></td><td>Matches Google PAA, voice search, and ChatGPT queries exactly</td></tr>
+      <tr><td>best SEO tool</td><td>What is the best SEO tool for a small business just starting out?</td><td><span class="badge" style="background:#fff3e0;color:#e65100">COMM</span></td><td>Niche qualifier reduces competition; high intent; AI engine friendly</td></tr>
+      <tr><td>keyword research</td><td>How do I find the right keywords for my blog without paying for tools?</td><td><span class="badge" style="background:#e8f4fd;color:#1565c0">INFO</span></td><td>Addresses a specific pain point; 7× lower competition than head term</td></tr>
+      <tr><td>buy backlinks</td><td>How do I build backlinks without spending money in 2026?</td><td><span class="badge" style="background:#e8f4fd;color:#1565c0">INFO</span></td><td>Avoids penalized tactics; conversational; aligns to real user need</td></tr>
+      <tr><td>website speed</td><td>Why is my website slow and how do I fix it step by step?</td><td><span class="badge" style="background:#e8f4fd;color:#1565c0">INFO</span></td><td>First-person question format; directly targeted for voice + AI</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:2.5rem;margin-bottom:.5rem;color:var(--navy)">Priority Keyword Types for AI SEO (Any Niche)</h3>
+  <div class="kwgrid">
+    <div class="kwitem">How to [achieve outcome] <span class="ki-info">INFO</span></div>
+    <div class="kwitem">What is [concept] in [year] <span class="ki-info">INFO</span></div>
+    <div class="kwitem">Best [tool/product] for [persona] <span class="ki-comm">COMM</span></div>
+    <div class="kwitem">[X] vs [Y] — full comparison <span class="ki-comm">COMM</span></div>
+    <div class="kwitem">Is [X] worth it in [year]? <span class="ki-comm">COMM</span></div>
+    <div class="kwitem">How do I fix [common problem]? <span class="ki-info">INFO</span></div>
+    <div class="kwitem">Why is my [thing] not working? <span class="ki-conv">CONV</span></div>
+    <div class="kwitem">Step-by-step guide to [process] <span class="ki-info">INFO</span></div>
+    <div class="kwitem">[Product] free trial / signup <span class="ki-trans">TRANS</span></div>
+    <div class="kwitem">What are the benefits of [X]? <span class="ki-info">INFO</span></div>
+    <div class="kwitem">How much does [X] cost? <span class="ki-comm">COMM</span></div>
+    <div class="kwitem">Best alternative to [competitor] <span class="ki-comm">COMM</span></div>
+    <div class="kwitem">Does [X] work for [use case]? <span class="ki-conv">CONV</span></div>
+    <div class="kwitem">Can I [action] without [obstacle]? <span class="ki-conv">CONV</span></div>
+    <div class="kwitem">[Concept] explained simply <span class="ki-info">INFO</span></div>
+    <div class="kwitem">How to get started with [X] <span class="ki-info">INFO</span></div>
+  </div>
+
+  <div class="callout warn mt2">
+    <strong>Keyword Research Tools for 2026:</strong> Use <strong>AlsoAsked.com</strong> for question clusters, <strong>Google Search Console</strong> to find what queries you already rank for (filter by questions), <strong>Ahrefs / Semrush Keyword Magic</strong> for volume + AI intent data, <strong>AnswerThePublic</strong> for visual question mapping, and simply type your topic into <strong>ChatGPT / Perplexity</strong> — the questions they ask you back are the keywords your audience uses.
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 7 — TOOLS
+══════════════════════════════════ -->
+<div id="tools" style="background:#fff">
+<div class="sec-wrap">
+  <div class="sec-label">Section 07</div>
+  <h2>Top AI SEO Tools in 2026 — Compared</h2>
+  <p class="sec-intro">There is no single tool that does everything perfectly. The best teams combine a research tool + a content optimization tool + a monitoring tool. Here's everything you need to know.</p>
+
+  <table class="ctable">
+    <thead>
+      <tr><th>Tool</th><th>Best For</th><th>Key AI Features</th><th>Best Pairing</th><th>Starting Price</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Semrush AI</strong></td>
+        <td>All-in-one research, auditing, content</td>
+        <td>ContentShake AI writer, Copilot assistant, AI keyword clustering, 140+ audit checks, 20B+ keyword database</td>
+        <td>Pair with Surfer for content scoring</td>
+        <td>$139/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Ahrefs</strong></td>
+        <td>Backlink analysis, competitor research, rank tracking</td>
+        <td>AI Content Grader, Keywords Explorer with intent filtering, 400B+ link index, AI-powered site audit</td>
+        <td>Pair with Clearscope for content quality</td>
+        <td>$29/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Surfer SEO</strong></td>
+        <td>Real-time content optimization while writing</td>
+        <td>NLP content scoring, SERP Analyzer, AI Outline Builder, live Google Docs integration</td>
+        <td>Pair with Semrush for research</td>
+        <td>$89/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Clearscope</strong></td>
+        <td>Editorial quality + semantic relevance scoring</td>
+        <td>NLP-powered content grading (A–F), entity coverage analysis, Google Docs plugin, readability scoring</td>
+        <td>Pair with Ahrefs for research</td>
+        <td>$189/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Jasper AI</strong></td>
+        <td>AI-assisted content creation at scale</td>
+        <td>Brand voice training, Surfer SEO integration (SEO Mode), 50+ templates, campaign workflows</td>
+        <td>Pair with Surfer for optimized output</td>
+        <td>$49/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Frase.io</strong></td>
+        <td>Research + brief generation + writing in one tool</td>
+        <td>AI brief builder from SERP analysis, Question research engine, AI writer, content scoring</td>
+        <td>Good standalone for smaller teams</td>
+        <td>$15/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Screaming Frog (AI)</strong></td>
+        <td>Technical SEO crawling and auditing</td>
+        <td>AI-powered crawl analysis, structured data validator, Core Web Vitals, redirect chain finder</td>
+        <td>Pair with Semrush for comprehensive audit</td>
+        <td>£259/yr</td>
+      </tr>
+      <tr>
+        <td><strong>AlsoAsked</strong></td>
+        <td>Question keyword research for AEO</td>
+        <td>Extracts People Also Ask clusters from any seed keyword, maps question networks visually</td>
+        <td>Use with any main SEO tool for FAQ research</td>
+        <td>Free (limited) / $15/mo</td>
+      </tr>
+      <tr>
+        <td><strong>BrightEdge</strong></td>
+        <td>Enterprise AI monitoring and forecasting</td>
+        <td>DataCube AI insights, Intent Signal engine, AI Overview tracking, auto-recommendations</td>
+        <td>Enterprise + Semrush</td>
+        <td>Custom (enterprise)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:2.5rem;margin-bottom:.8rem;color:var(--navy)">Recommended Tool Stacks by Team Size</h3>
+  <div class="grid-3">
+    <div class="card">
+      <div class="c-icon">👤</div>
+      <h3>Solo Creator / Blogger</h3>
+      <p style="margin-bottom:.6rem"><strong>Budget: ~$30–60/mo</strong></p>
+      <ul>
+        <li><strong>Ahrefs Starter</strong> ($29/mo) — research</li>
+        <li><strong>Frase.io</strong> ($15/mo) — brief + content</li>
+        <li><strong>AlsoAsked</strong> (free) — question research</li>
+        <li><strong>Google Search Console</strong> (free) — tracking</li>
+        <li><strong>Rank Math / Yoast</strong> (free) — on-page</li>
+      </ul>
+    </div>
+    <div class="card mint-t">
+      <div class="c-icon">👥</div>
+      <h3>Small Team (2–5 people)</h3>
+      <p style="margin-bottom:.6rem"><strong>Budget: ~$150–250/mo</strong></p>
+      <ul>
+        <li><strong>Semrush Pro</strong> ($139/mo) — all-in-one</li>
+        <li><strong>Surfer SEO</strong> ($89/mo) — content scoring</li>
+        <li><strong>AlsoAsked Pro</strong> — question research</li>
+        <li><strong>Google Search Console</strong> (free)</li>
+        <li><strong>Screaming Frog</strong> (£259/yr) — tech audit</li>
+      </ul>
+    </div>
+    <div class="card yellow-t">
+      <div class="c-icon">🏢</div>
+      <h3>Agency / Large Team</h3>
+      <p style="margin-bottom:.6rem"><strong>Budget: ~$500–1000+/mo</strong></p>
+      <ul>
+        <li><strong>Semrush Business</strong> — research + reports</li>
+        <li><strong>Ahrefs</strong> — backlink authority</li>
+        <li><strong>Clearscope</strong> — editorial quality</li>
+        <li><strong>Jasper AI</strong> — content at scale</li>
+        <li><strong>BrightEdge</strong> — AI monitoring</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chart-grid mt2">
+    <div class="cbox">
+      <h4>AI SEO Tool Market Share by Use Case (2026)</h4>
+      <p class="csub">Research tools dominate — content optimization is fastest growing segment</p>
+      <canvas id="c9"></canvas>
+    </div>
+    <div class="cbox">
+      <h4>Tool Adoption Among SEO Professionals</h4>
+      <p class="csub">% of SEO professionals using each tool category (2025 survey)</p>
+      <canvas id="c10"></canvas>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 8 — RESOURCES
+══════════════════════════════════ -->
+<div id="resources" style="background:#EEF3FF">
+<div class="sec-wrap">
+  <div class="sec-label mint">Section 08</div>
+  <h2>Best YouTube Channels, Blogs & Technologies to Follow</h2>
+  <p class="sec-intro">The AI SEO landscape moves fast. These are the highest-quality, most up-to-date sources verified for 2026 — covering everything from beginner tactics to advanced GEO strategy.</p>
+
+  <h3 style="color:var(--navy);margin-bottom:1rem">📺 Top YouTube Channels for SEO & AI Search</h3>
+  <div class="grid-3">
+    <div class="res-card"><div class="res-icon" style="background:#FF0000;color:#fff">▶</div><div><h4>Semrush</h4><p>Tool tutorials, case studies, AI SEO strategy sessions, live Q&As. Best for learning the full SEO stack with real data.</p><a href="https://www.youtube.com/@semrush" target="_blank">youtube.com/@semrush →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#FF6B35;color:#fff">▶</div><div><h4>Ahrefs</h4><p>Data-driven SEO tactics, technical SEO deep dives, backlink strategy. Run by Tim Soulo — some of the most research-backed content available.</p><a href="https://www.youtube.com/@AhrefsComSEO" target="_blank">youtube.com/@AhrefsComSEO →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#4285F4;color:#fff">▶</div><div><h4>Google Search Central</h4><p>Official guidance from Google engineers. The source of truth for algorithm updates, structured data, and indexing best practices.</p><a href="https://www.youtube.com/@GoogleSearchCentral" target="_blank">youtube.com/@GoogleSearchCentral →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#1a3a7a;color:#fff">▶</div><div><h4>Nathan Gotch</h4><p>Practical, no-fluff SEO strategies. Covers keyword research, link building, AI search optimization. One of the most trusted SEO educators in 2026.</p><a href="https://www.youtube.com/@NathanGotch" target="_blank">youtube.com/@NathanGotch →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#7C5CBF;color:#fff">▶</div><div><h4>Moz</h4><p>Famous "Whiteboard Friday" series. Beginner-friendly, visually explained SEO concepts. Excellent for teams new to SEO fundamentals and AI SEO concepts.</p><a href="https://www.youtube.com/@MozHQ" target="_blank">youtube.com/@MozHQ →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#00C2E0;color:#fff">▶</div><div><h4>Neil Patel</h4><p>High-volume, accessible content on SEO, content marketing, and AI tools. Best for broad strategy overviews and keeping up with industry shifts.</p><a href="https://www.youtube.com/@NeilPatel" target="_blank">youtube.com/@NeilPatel →</a></div></div>
+  </div>
+
+  <h3 style="color:var(--navy);margin-top:2.5rem;margin-bottom:1rem">📝 Top Blogs & Publications to Bookmark</h3>
+  <div class="grid-3">
+    <div class="res-card"><div class="res-icon" style="background:#F5C518">📰</div><div><h4>Search Engine Journal</h4><p>Daily AI SEO news, in-depth guides, expert analysis on algorithm updates. Most comprehensive SEO news source available.</p><a href="https://searchenginejournal.com" target="_blank">searchenginejournal.com →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#FF6B35;color:#fff">📰</div><div><h4>Search Engine Land</h4><p>Breaking news on Google algorithm updates, AI search developments, and SEO industry analysis. Essential daily read.</p><a href="https://searchengineland.com" target="_blank">searchengineland.com →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#7C5CBF;color:#fff">📰</div><div><h4>Moz Blog</h4><p>In-depth research-backed articles. Whiteboard Friday archive. Especially strong for beginners building a solid SEO foundation.</p><a href="https://moz.com/blog" target="_blank">moz.com/blog →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#1a3a7a;color:#fff">📰</div><div><h4>Ahrefs Blog</h4><p>Data-driven SEO case studies, tool tutorials, and original research. Best for intermediate-to-advanced practitioners seeking proof-based strategies.</p><a href="https://ahrefs.com/blog" target="_blank">ahrefs.com/blog →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#00C2E0;color:#fff">📰</div><div><h4>Semrush Blog</h4><p>Actionable AI SEO guides, industry statistics, and tool-specific tutorials. The most comprehensive resource for Semrush users.</p><a href="https://semrush.com/blog" target="_blank">semrush.com/blog →</a></div></div>
+    <div class="res-card"><div class="res-icon" style="background:#00D68F;color:#fff">📰</div><div><h4>Clearscope Blog</h4><p>Cutting-edge content optimization strategy, E-E-A-T deep dives, and 2026 SEO playbooks focused on AI visibility.</p><a href="https://clearscope.io/blog" target="_blank">clearscope.io/blog →</a></div></div>
+  </div>
+
+  <h3 style="color:var(--navy);margin-top:2.5rem;margin-bottom:1rem">⚙️ Key Technologies Shaping AI Search in 2026</h3>
+  <div class="grid-4">
+    <div class="card"><div class="c-icon">🧠</div><h3>Large Language Models (LLMs)</h3><p>GPT-4o, Gemini 1.5, Claude 3, Llama 3 power the AI engines that now understand and synthesize search results. Understanding how LLMs "read" content is the foundation of modern SEO.</p></div>
+    <div class="card mint-t"><div class="c-icon">🔗</div><h3>Retrieval Augmented Generation (RAG)</h3><p>RAG is how AI engines fetch live web content to answer questions. Your content must be well-structured, clearly written, and factually accurate to be retrieved and cited by RAG systems.</p></div>
+    <div class="card yellow-t"><div class="c-icon">🏷️</div><h3>Schema.org Structured Data</h3><p>The vocabulary that lets AI engines understand what your content is about. FAQ, HowTo, Article, Organization — these schema types are increasingly used as AI eligibility signals.</p></div>
+    <div class="card orange-t"><div class="c-icon">⚡</div><h3>Core Web Vitals</h3><p>LCP, FID, CLS — Google's page experience metrics. In 2026, failing Core Web Vitals actively suppresses rankings. Tools: PageSpeed Insights, Lighthouse, WebPageTest.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 9 — ROADMAP
+══════════════════════════════════ -->
+<div id="roadmap" class="dark-bg">
+<div class="sec-wrap">
+  <div class="sec-label yellow">Section 09</div>
+  <h2>Your 90-Day AI SEO Roadmap</h2>
+  <p class="sec-intro">A practical, phased plan any team or individual can execute — regardless of your current SEO level. Each phase builds on the last.</p>
+
+  <div class="roadmap">
+    <div class="rphase">
+      <div class="rph">
+        <div class="rnum" style="background:var(--cyan);color:var(--navy)">1</div>
+        <div><div class="rtitle" style="color:var(--cyan)">Foundation Phase</div><div class="rtime">Days 1–14</div></div>
+      </div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Run a full technical audit (Semrush / Screaming Frog) — fix critical errors first: broken links, missing metas, slow pages, redirect chains</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Set up Google Search Console and submit your sitemap. Enable AI Overview filtering to track impressions</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Add FAQ schema to your top 5 highest-traffic pages immediately — this is the fastest path to AI Overview eligibility</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Add author bios with real credentials to all existing content — this is your most important E-E-A-T signal</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Build your keyword universe: 200–500 keywords clustered by intent using Ahrefs or Semrush</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--cyan)"></div><div><div class="rtxt">Test your top 10 queries in ChatGPT + Perplexity. Document if and how your brand/site appears</div></div></div>
+    </div>
+
+    <div class="rphase">
+      <div class="rph">
+        <div class="rnum" style="background:var(--mint);color:var(--navy)">2</div>
+        <div><div class="rtitle" style="color:var(--mint)">Content Sprint Phase</div><div class="rtime">Days 15–60</div></div>
+      </div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Publish 1 comprehensive pillar page on your core topic (2,500–4,000 words, Surfer 85+ score, FAQ schema included)</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Publish 6–8 supporting cluster posts targeting long-tail question keywords around your pillar topic</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Rewrite your top 3 existing posts using the "answer first" structure + question-format headings + FAQ sections</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Add Organization schema to your homepage and Article schema to all published posts</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Publish 1 original data piece — survey, report, or analysis using data you uniquely have access to</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--mint)"></div><div><div class="rtxt">Start building external citations: guest posts, industry directory listings, review platform profiles</div></div></div>
+    </div>
+
+    <div class="rphase">
+      <div class="rph">
+        <div class="rnum" style="background:var(--yellow);color:var(--navy)">3</div>
+        <div><div class="rtitle" style="color:var(--yellow)">Measure & Scale Phase</div><div class="rtime">Days 61–90</div></div>
+      </div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Review rankings: which pages moved into top 10? Which are on page 2 and need more backlinks or internal links?</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Re-test target queries in ChatGPT / Perplexity / Google AI Overviews — document changes in citation patterns</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Scale content production: establish a consistent cadence (weekly or bi-weekly) using your proven workflow</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Set up conversion attribution: connect organic traffic to goal completions in GA4. Which content drives actual results?</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Update your 5 most-visited older posts with fresh statistics, new FAQs, and current year date signals</div></div></div>
+      <div class="rtask"><div class="rdot" style="background:var(--yellow)"></div><div><div class="rtxt">Build your second pillar cluster — now that you have data on what's working, target your next highest-value topic</div></div></div>
+    </div>
+  </div>
+
+  <!-- Final checklist -->
+  <h3 style="color:var(--cyan);margin-top:3rem;margin-bottom:1rem">✅ The Complete AI SEO Action Checklist</h3>
+  <div class="grid-2">
+    <div>
+      <h4 style="color:var(--mint);margin-bottom:.8rem">Technical Foundation</h4>
+      <ul class="cklist">
+        <li><span class="ck yes">✓</span><span style="color:var(--light)">Site audit completed; critical errors fixed</span></li>
+        <li><span class="ck yes">✓</span><span style="color:var(--light)">Google Search Console connected + sitemap submitted</span></li>
+        <li><span class="ck yes">✓</span><span style="color:var(--light)">Core Web Vitals: LCP &lt;2.5s, FID &lt;100ms, CLS &lt;0.1</span></li>
+        <li><span class="ck yes">✓</span><span style="color:var(--light)">HTTPS + security certificates in place</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">FAQ schema on top 10 pages</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Article schema on all blog posts</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Organization schema on homepage</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">HowTo schema on tutorial pages</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">All schema validated in Rich Results Test</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Mobile experience tested on 3+ device sizes</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:var(--mint);margin-bottom:.8rem">Content & Authority</h4>
+      <ul class="cklist">
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Author bios with credentials on all posts</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">1 pillar page per core topic area published</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Question-format headings on all new content</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Direct 40–60 word answer in every opening paragraph</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">FAQ section with 5+ Q&As on every post</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Original statistic or research piece published</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Content update schedule in place (quarterly)</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Queries tested in ChatGPT + Perplexity monthly</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">External citations / brand mentions being built</span></li>
+        <li><span class="ck todo">○</span><span style="color:var(--light)">Conversion tracking connected to content in GA4</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="ftag">AI-Driven SEO & Conversational Search — Complete Webinar Guide 2026</p>
+  <p style="margin-top:.5rem;font-size:.85rem">For all websites · all niches · all team sizes · Presented at marketing@eleapis.com</p>
+  <div class="fsrc">
+    Sources:
+    <a href="https://www.position.digital/blog/ai-seo-statistics/" target="_blank">Position Digital (150+ AI SEO Stats)</a> ·
+    <a href="https://www.superlines.io/articles/ai-search-statistics/" target="_blank">Superlines AI Search Stats</a> ·
+    <a href="https://marketingltb.com/blog/statistics/generative-engine-optimization-statistics/" target="_blank">Marketing LTB — GEO Stats</a> ·
+    <a href="https://www.semrush.com/blog/ai-seo-statistics/" target="_blank">Semrush Blog</a> ·
+    <a href="https://digitaloft.co.uk/insights/ai-in-seo-statistics" target="_blank">Digitaloft</a> ·
+    <a href="https://searchengineland.com/seo-2026-higher-standards-ai-influence-web-catching-up-473540" target="_blank">Search Engine Land</a> ·
+    <a href="https://www.clearscope.io/blog/2026-seo-aeo-playbook" target="_blank">Clearscope 2026 SEO Playbook</a> ·
+    <a href="https://rankmath.com/blog/best-seo-youtube-channels/" target="_blank">Rank Math — SEO YouTube Channels</a>
+  </div>
+</footer>
+
+<script>
+// ── ALL CHARTS ──
+const CD = { plugins:{ legend:{ labels:{ color:'#1C2B4A', font:{ size:11 } } } }, responsive:true, maintainAspectRatio:true };
+
+// C1 — AI Market Share Pie
+new Chart(document.getElementById('c1'),{ type:'doughnut', data:{ labels:['ChatGPT','Gemini','Perplexity','Copilot (Bing)','Others'], datasets:[{ data:[58,28,7,4,3], backgroundColor:['#00C2E0','#00D68F','#F5C518','#FF6B35','#7C5CBF'], borderWidth:2, borderColor:'#fff' }] }, options:{ ...CD, plugins:{...CD.plugins, tooltip:{callbacks:{label:c=>` ${c.label}: ${c.parsed}%`}}}} });
+
+// C2 — Conversion Rates Bar
+new Chart(document.getElementById('c2'),{ type:'bar', data:{ labels:['ChatGPT\nReferral','Perplexity\nReferral','Claude\nReferral','Gemini\nReferral','Google\nOrganic'], datasets:[{ label:'Conversion Rate %', data:[15.9,10.5,5.0,3.0,1.76], backgroundColor:['#00C2E0','#00D68F','#F5C518','#FF6B35','#C8D8F0'], borderRadius:8 }] }, options:{ ...CD, plugins:{...CD.plugins,legend:{display:false}}, scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF3FF'} }, x:{grid:{display:false}} } } });
+
+// C3 — AI Overview by query type
+new Chart(document.getElementById('c3'),{ type:'bar', data:{ labels:['Question queries','All searches','Informational','Commercial intent','Local queries','Navigational'], datasets:[{ label:'% triggering AI Overview', data:[57.9,25.11,48,18,22,8], backgroundColor:['#0B1F4B','#1A3A7A','#00C2E0','#00D68F','#F5C518','#FF6B35'], borderRadius:8 }] }, options:{ ...CD, indexAxis:'y', plugins:{...CD.plugins,legend:{display:false}}, scales:{ x:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF3FF'} }, y:{grid:{display:false}} } } });
+
+// C4 — Zero click growth line
+new Chart(document.getElementById('c4'),{ type:'line', data:{ labels:['2020','2021','2022','2023','2024','2025','2026*'], datasets:[{ label:'Zero-Click Search %', data:[34,38,43,49,55,60,62], borderColor:'#E84545', backgroundColor:'rgba(232,69,69,0.08)', fill:true, tension:0.4, pointBackgroundColor:'#E84545', pointRadius:5 }] }, options:{ ...CD, scales:{ y:{ beginAtZero:false, min:25, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF3FF'} }, x:{grid:{display:false}} } } });
+
+// C5 — Platform conversion rates
+new Chart(document.getElementById('c5'),{ type:'bar', data:{ labels:['ChatGPT','Perplexity','Claude.ai','Gemini','Google Organic'], datasets:[{ label:'Conversion Rate (%)', data:[15.9,10.5,5.0,3.0,1.76], backgroundColor:['#00C2E0','#00D68F','#F5C518','#FF6B35','#C8D8F0'], borderRadius:10 }] }, options:{ ...CD, plugins:{...CD.plugins,legend:{display:false}}, scales:{ y:{beginAtZero:true,ticks:{callback:v=>v+'%'},grid:{color:'#f0f4ff'}}, x:{grid:{display:false}} } } });
+
+// C6 — AI referral traffic share
+new Chart(document.getElementById('c6'),{ type:'pie', data:{ labels:['ChatGPT','Perplexity','Copilot (Bing)','Gemini','Others'], datasets:[{ data:[87.4,6.2,3.1,2.1,1.2], backgroundColor:['#0B1F4B','#00C2E0','#FF6B35','#00D68F','#7C5CBF'], borderWidth:2, borderColor:'#fff' }] }, options:{ ...CD, plugins:{...CD.plugins,tooltip:{callbacks:{label:c=>` ${c.label}: ${c.parsed}%`}}}} });
+
+// C7 — GEO market growth
+new Chart(document.getElementById('c7'),{ type:'line', data:{ labels:['2024','2025','2026','2027','2028','2029','2030','2031'], datasets:[{ label:'GEO Market Size ($B)', data:[0.886,1.19,1.59,2.14,2.87,3.85,5.17,7.3], borderColor:'#00C2E0', backgroundColor:'rgba(0,194,224,0.1)', fill:true, tension:0.4, pointBackgroundColor:'#00C2E0', pointRadius:5 }] }, options:{ ...CD, scales:{ y:{beginAtZero:true,ticks:{callback:v=>'$'+v+'B'},grid:{color:'rgba(255,255,255,.08)'}}, x:{grid:{display:false},ticks:{color:'#C8D8F0'}} }, plugins:{...CD.plugins,legend:{labels:{color:'#C8D8F0'}}} } });
+
+// C8 — Correlation bar
+new Chart(document.getElementById('c8'),{ type:'bar', data:{ labels:['Branded Web\nMentions','Domain\nAuthority','Content\nDepth','Internal\nLinks','Backlinks\n(PageRank)','Keyword\nDensity'], datasets:[{ label:'Correlation with AI Overview Appearances', data:[0.664,0.51,0.48,0.37,0.218,0.09], backgroundColor:['#00D68F','#00C2E0','#F5C518','#FF6B35','#7C5CBF','#E84545'], borderRadius:8 }] }, options:{ ...CD, plugins:{...CD.plugins,legend:{display:false,labels:{color:'#C8D8F0'}}}, scales:{ y:{beginAtZero:true,max:0.8,ticks:{color:'#C8D8F0'},grid:{color:'rgba(255,255,255,.08)'}}, x:{ticks:{color:'#C8D8F0'},grid:{display:false}} } } });
+
+// C9 — Tool market share pie
+new Chart(document.getElementById('c9'),{ type:'doughnut', data:{ labels:['Research & Auditing','Content Optimization','AI Writing Assist','Technical SEO','Rank Monitoring'], datasets:[{ data:[35,28,18,12,7], backgroundColor:['#0B1F4B','#00C2E0','#00D68F','#F5C518','#FF6B35'], borderWidth:2, borderColor:'#fff' }] }, options:{ ...CD, plugins:{...CD.plugins,tooltip:{callbacks:{label:c=>` ${c.label}: ${c.parsed}%`}}}} });
+
+// C10 — Tool adoption horizontal bar
+new Chart(document.getElementById('c10'),{ type:'bar', data:{ labels:['Google Search Console','Semrush / Ahrefs','Surfer / Clearscope','Jasper / Frase AI','BrightEdge / Enterprise'], datasets:[{ label:'% SEO Professionals Using', data:[89,72,41,38,18], backgroundColor:['#00D68F','#00C2E0','#F5C518','#FF6B35','#7C5CBF'], borderRadius:8 }] }, options:{ ...CD, indexAxis:'y', plugins:{...CD.plugins,legend:{display:false}}, scales:{ x:{beginAtZero:true,ticks:{callback:v=>v+'%'},grid:{color:'#EEF3FF'}}, y:{grid:{display:false}} } } });
+
+// ── ACCORDION ──
+function ta(h){ const b=h.nextElementSibling, ic=h.querySelector('.aico'), op=b.classList.contains('open'); document.querySelectorAll('.abody.open').forEach(x=>{x.classList.remove('open');x.previousElementSibling.querySelector('.aico').textContent='+'}); if(!op){b.classList.add('open');ic.textContent='−'} }
+
+// ── TABS ──
+function st(btn,id){ document.querySelectorAll('.tcontent').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active')); document.getElementById(id).classList.add('active'); btn.classList.add('active'); }
+</script>
+</body>
+</html>

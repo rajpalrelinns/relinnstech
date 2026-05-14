@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google SERP Indexing Issue Analysis</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      color: #111827;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      color: #1f2937;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    p {
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 16.5px;
+    }
+
+    .highlight {
+      background: #eef4ff;
+      border-left: 5px solid #2563eb;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin: 24px 0;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin: 24px 0;
+    }
+
+    .success {
+      background: #ecfdf5;
+      border-left: 5px solid #10b981;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin: 24px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15.5px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f4f6;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+
+    .footer-note {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <span class="section-label">SEO Diagnosis</span>
+      <h1>Google SERP Indexing Issue: Deep Analysis & Permanent Solution</h1>
+
+      <p>
+        The issue described is not a normal ranking fluctuation. It is most likely an
+        <strong>index-retention problem</strong>. The blog is getting indexed, ranking well for a few days,
+        then being removed or suppressed from SERP until indexing is requested again.
+      </p>
+
+      <div class="highlight">
+        <p>
+          <strong>Observed pattern:</strong> New blog gets indexed, ranks in position 1–2, then disappears
+          from SERP after 3–4 days. When indexing is requested again, it regains its previous ranking.
+        </p>
+      </div>
+
+      <p>
+        This usually means Google can crawl the page, but after reprocessing it, Google is not confident
+        enough to keep the URL strongly indexed or ranked.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Most Likely Reason</h2>
+
+      <p>
+        Google is initially testing the new blog because the domain has strong authority and fresh content.
+        After a few days, Google recrawls and re-evaluates the URL based on canonical signals, duplicate
+        content, internal linking, crawl consistency, and content quality.
+      </p>
+
+      <div class="warning">
+        <p>
+          <strong>Main hypothesis:</strong> Google gives the blog temporary visibility because of domain
+          authority and freshness, but later suppresses or removes it because the page lacks strong
+          index-retention signals.
+        </p>
+      </div>
+
+      <h3>Common Google Search Console statuses to check</h3>
+      <ul>
+        <li>Crawled – currently not indexed</li>
+        <li>Discovered – currently not indexed</li>
+        <li>Duplicate, Google chose different canonical</li>
+        <li>Alternate page with proper canonical tag</li>
+        <li>Soft 404</li>
+        <li>Blocked by robots.txt or meta robots</li>
+        <li>Indexed, but not ranking because of quality or cannibalization</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Possible Causes</h2>
+
+      <h3>1. Canonical Conflict or Duplicate Cluster Issue</h3>
+      <p>
+        This is one of the most probable causes. Google may initially index the blog but later choose another
+        URL as the canonical version.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Issue</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Same content accessible through multiple URLs</td>
+            <td><code>/blog/post/</code>, <code>/blog/post</code>, UTM URLs, AMP URLs</td>
+          </tr>
+          <tr>
+            <td>Wrong canonical tag</td>
+            <td>The blog canonical points to another post or category page</td>
+          </tr>
+          <tr>
+            <td>HTTP/HTTPS or www/non-www inconsistency</td>
+            <td>Google sees multiple URL versions</td>
+          </tr>
+          <tr>
+            <td>Similar blogs targeting same keyword</td>
+            <td>Google chooses an older blog instead of the new one</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Check the affected URLs in Google Search Console URL Inspection and compare:
+      </p>
+
+      <ul>
+        <li>User-declared canonical</li>
+        <li>Google-selected canonical</li>
+        <li>Last crawl date</li>
+        <li>Indexing status</li>
+        <li>Referring page</li>
+      </ul>
+
+      <h3>2. Crawled – Currently Not Indexed</h3>
+      <p>
+        If the URL falls into this status, Google has crawled the page but decided not to keep it indexed.
+        This is often caused by weak content value, duplication, low uniqueness, or poor internal linking.
+      </p>
+
+      <h3>3. Weak Internal Linking After Publishing</h3>
+      <p>
+        When a blog is newly published, it appears on the homepage, blog listing, category page, recent posts,
+        and sitemap. After 3–4 days, newer posts may push it down.
+      </p>
+
+      <p>
+        If the blog does not have permanent contextual internal links, Google may reduce crawl priority and
+        indexing confidence.
+      </p>
+
+      <h3>4. Sitemap or Lastmod Issue</h3>
+      <p>
+        If the blog URL is removed from the sitemap, cached incorrectly, or has inconsistent <code>lastmod</code>,
+        Google may not treat the URL as stable.
+      </p>
+
+      <h3>5. Robots, Meta Noindex, or X-Robots-Tag Issue</h3>
+      <p>
+        Some CMS, SEO plugin, CDN, or cache setups accidentally change indexability after publishing.
+      </p>
+
+      <pre><code>curl -A "Googlebot/2.1 (+http://www.google.com/bot.html)" -I https://example.com/blog-url/</code></pre>
+
+      <p>Check for:</p>
+
+      <pre><code>&lt;meta name="robots" content="noindex"&gt;
+&lt;link rel="canonical" href="wrong-url"&gt;
+X-Robots-Tag: noindex</code></pre>
+
+      <h3>6. Soft 404 or Rendering Issue</h3>
+      <p>
+        Google may see a weak or empty version of the page if the article content loads through JavaScript,
+        is blocked, or is not visible in the crawled HTML.
+      </p>
+
+      <h3>7. Index Bloat</h3>
+      <p>
+        If many weak URLs are indexed, such as tag pages, date archives, author archives, attachment pages,
+        search pages, or thin categories, Google may reduce trust in the blog section.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Why Manual Re-indexing Works Temporarily</h2>
+
+      <p>
+        Manual indexing forces Google to recrawl and reprocess the URL. This temporarily refreshes the page
+        in Google's index and ranking systems.
+      </p>
+
+      <ol>
+        <li>Google fetches the page again.</li>
+        <li>Google renders the page again.</li>
+        <li>The URL enters the processing queue again.</li>
+        <li>The page regains ranking because the domain and content are strong.</li>
+        <li>After the next evaluation cycle, the issue repeats if the root cause is not fixed.</li>
+      </ol>
+
+      <div class="warning">
+        <p>
+          Requesting indexing is not a permanent solution. It only restarts the crawl and evaluation cycle.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What to Check First</h2>
+
+      <p>
+        Pick 10 affected blog URLs and create a diagnostic sheet with the following columns:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>URL</th>
+            <th>Publish Date</th>
+            <th>Drop Date</th>
+            <th>GSC Status</th>
+            <th>User Canonical</th>
+            <th>Google Canonical</th>
+            <th>Last Crawl</th>
+            <th>In Sitemap?</th>
+            <th>Internal Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blog URL</td>
+            <td>Date published</td>
+            <td>Date removed from SERP</td>
+            <td>GSC indexing status</td>
+            <td>Declared canonical</td>
+            <td>Google-selected canonical</td>
+            <td>Last crawl date</td>
+            <td>Yes / No</td>
+            <td>Number of contextual inlinks</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        This will help identify whether the issue is technical, canonical, content-quality related, or caused
+        by weak internal linking.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Permanent Solution</h2>
+
+      <h3>1. Build a Blog Index-Retention Checklist</h3>
+
+      <ul>
+        <li>URL returns 200 OK.</li>
+        <li>No redirect chain.</li>
+        <li>Self-referencing canonical tag is present.</li>
+        <li>No meta noindex.</li>
+        <li>No X-Robots-Tag noindex.</li>
+        <li>URL is included in XML sitemap.</li>
+        <li>Sitemap has correct lastmod date.</li>
+        <li>Mobile version renders the full article body.</li>
+        <li>Title and H1 are unique.</li>
+        <li>Content does not duplicate older blogs.</li>
+      </ul>
+
+      <h3>2. Strengthen Internal Linking</h3>
+
+      <p>
+        Every new blog should receive permanent links from:
+      </p>
+
+      <ul>
+        <li>3–5 relevant older blogs</li>
+        <li>1 topical hub page</li>
+        <li>1 relevant service or product page</li>
+        <li>Breadcrumbs</li>
+        <li>Related posts section</li>
+        <li>HTML blog/category archive</li>
+      </ul>
+
+      <h3>3. Create Topical Hubs</h3>
+
+      <p>
+        Avoid publishing isolated blogs. Create topic clusters where a central hub page links to all supporting
+        articles.
+      </p>
+
+      <pre><code>Main Topic Hub
+ ├── Supporting Blog 1
+ ├── Supporting Blog 2
+ ├── Supporting Blog 3
+ └── FAQ / Comparison / Use Case Page</code></pre>
+
+      <h3>4. Fix Keyword Cannibalization</h3>
+
+      <p>
+        Before publishing a blog, check whether your site already has similar content:
+      </p>
+
+      <pre><code>site:yourdomain.com "target keyword"
+site:yourdomain.com intitle:"keyword"
+site:yourdomain.com/blog/ "keyword"</code></pre>
+
+      <p>
+        If multiple pages target the same intent, merge, canonicalize, or reposition the content.
+      </p>
+
+      <h3>5. Clean Index Bloat</h3>
+
+      <p>
+        Review Google Search Console indexing reports and remove or noindex weak URL types:
+      </p>
+
+      <ul>
+        <li>Tag pages</li>
+        <li>Author archives</li>
+        <li>Date archives</li>
+        <li>Internal search pages</li>
+        <li>Thin category pages</li>
+        <li>Attachment pages</li>
+        <li>Parameter URLs</li>
+      </ul>
+
+      <h3>6. Improve Content Differentiation</h3>
+
+      <p>
+        Add unique value that competitors do not have:
+      </p>
+
+      <ul>
+        <li>Original screenshots</li>
+        <li>Product examples</li>
+        <li>Internal data</li>
+        <li>Comparison tables</li>
+        <li>Real implementation steps</li>
+        <li>Expert quotes</li>
+        <li>Custom diagrams</li>
+        <li>FAQs from sales or support queries</li>
+        <li>Templates and checklists</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>7-Day Action Plan</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Action</th>
+            <th>Goal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Day 1</td>
+            <td>Check 10 affected URLs in Google Search Console URL Inspection.</td>
+            <td>Identify indexing status and canonical behavior.</td>
+          </tr>
+          <tr>
+            <td>Day 2</td>
+            <td>Run a technical crawl using Screaming Frog or Sitebulb.</td>
+            <td>Find canonical, robots, sitemap, duplicate, and orphan-page issues.</td>
+          </tr>
+          <tr>
+            <td>Day 3</td>
+            <td>Add 3–5 contextual internal links to each affected blog.</td>
+            <td>Increase crawl priority and index-retention signals.</td>
+          </tr>
+          <tr>
+            <td>Day 4</td>
+            <td>Refresh affected content with unique examples, screenshots, and expert insights.</td>
+            <td>Improve content quality and differentiation.</td>
+          </tr>
+          <tr>
+            <td>Day 5</td>
+            <td>Validate sitemap, canonical, and lastmod consistency.</td>
+            <td>Confirm Google receives stable signals.</td>
+          </tr>
+          <tr>
+            <td>Day 6</td>
+            <td>Remove or noindex weak archive/tag/search pages.</td>
+            <td>Reduce index bloat.</td>
+          </tr>
+          <tr>
+            <td>Day 7</td>
+            <td>Monitor indexing, crawl date, rankings, and impressions.</td>
+            <td>Check whether the issue repeats after recrawl.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Final Conclusion</h2>
+
+      <div class="success">
+        <p>
+          The issue is most likely happening because Google is giving the blog temporary visibility due to
+          domain strength and freshness, but after re-evaluation, it is not retaining the URL strongly in the
+          index because of weak index-retention signals.
+        </p>
+      </div>
+
+      <p>
+        The long-term solution is not repeated manual indexing. The solution is to improve:
+      </p>
+
+      <ul>
+        <li>Canonical consistency</li>
+        <li>Sitemap stability</li>
+        <li>Permanent internal linking</li>
+        <li>Topical hub structure</li>
+        <li>Content uniqueness</li>
+        <li>Index bloat cleanup</li>
+        <li>Technical crawl/render reliability</li>
+      </ul>
+
+      <p>
+        The fastest test is to take 5 affected blogs, add strong internal links from already ranking pages,
+        verify canonical and sitemap consistency, improve uniqueness, then request indexing once. If those
+        pages remain stable after 10–14 days, the root cause is likely internal linking, content quality,
+        canonicalization, or index-retention weakness rather than a Google bug.
+      </p>
+
+      <p class="footer-note">
+        Recommended next step: audit 10 affected URLs and compare their Google-selected canonical, sitemap
+        status, internal links, and GSC indexing status after they disappear from SERP.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
